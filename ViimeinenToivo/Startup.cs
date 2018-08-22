@@ -25,7 +25,7 @@ namespace ViimeinenToivo
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<ViikkoProjektiDBContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
+            options.UseSqlServer(Configuration.GetConnectionString("ViikkoProjektiDB")));
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
