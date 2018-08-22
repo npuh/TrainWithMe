@@ -26,7 +26,7 @@ namespace ViimeinenToivo.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server = tcp:trainwithme.database.windows.net, 1433; Initial Catalog = ViikkoProjektiDB; Persist Security Info = False; User ID = 1423526; Password =ttykyk1; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+                optionsBuilder.UseSqlServer("Server = tcp:trainwithme.database.windows.net, 1433; Initial Catalog = ViikkoProjektiDB; Persist Security Info = False; User ID = sklaö3; Password =Isae882761; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
             }
         }
 
