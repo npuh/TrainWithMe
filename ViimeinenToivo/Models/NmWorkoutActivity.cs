@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace ViimeinenToivo.Models
 {
-    public partial class NmProgramActivity
+    public partial class NmWorkoutActivity
     {
-        public int NmPaId { get; set; }
-        public int ProgramId { get; set; }
+        public int NmWaId { get; set; }
+        public int WorkoutId { get; set; }
         public int ActivityId { get; set; }
 
         public Activity Activity { get; set; }
-        public Program Program { get; set; }
+        public Workout Workout { get; set; }
     }
 }

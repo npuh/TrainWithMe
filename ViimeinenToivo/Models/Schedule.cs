@@ -8,9 +8,9 @@ namespace ViimeinenToivo.Models
         public int UserId { get; set; }
         public DateTime Date { get; set; }
         public int ScheduleId { get; set; }
-        public int ProgramId { get; set; }
+        public int WorkoutId { get; set; }
 
-        public Program Program { get; set; }
         public User User { get; set; }
+        public Workout Workout { get; set; }
     }
 }

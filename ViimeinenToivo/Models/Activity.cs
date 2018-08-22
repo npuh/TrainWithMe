@@ -7,7 +7,7 @@ namespace ViimeinenToivo.Models
     {
         public Activity()
         {
-            NmProgramActivity = new HashSet<NmProgramActivity>();
+            NmWorkoutActivity = new HashSet<NmWorkoutActivity>();
         }
 
         public string Activityname { get; set; }
@@ -18,6 +18,6 @@ namespace ViimeinenToivo.Models
         public int ActivityId { get; set; }
         public TimeSpan? Duration { get; set; }
 
-        public ICollection<NmProgramActivity> NmProgramActivity { get; set; }
+        public ICollection<NmWorkoutActivity> NmWorkoutActivity { get; set; }
     }
 }
