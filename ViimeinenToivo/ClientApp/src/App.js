@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
+import User from './Components/User';
 
 class App extends Component {
     goTo(route) {
@@ -58,6 +59,7 @@ class App extends Component {
                         }
                     </Navbar.Header>
                 </Navbar>
+                <User/>
             </div>
         );
     }
