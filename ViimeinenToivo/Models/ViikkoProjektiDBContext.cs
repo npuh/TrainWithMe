@@ -16,17 +16,17 @@ namespace ViimeinenToivo.Models
         }
 
         public virtual DbSet<Activity> Activity { get; set; }
-        public virtual DbSet<NmProgramActivity> NmProgramActivity { get; set; }
-        public virtual DbSet<Program> Program { get; set; }
+        public virtual DbSet<NmWorkoutActivity> NmWorkoutActivity { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Workout> Workout { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server = tcp:trainwithme.database.windows.net, 1433; Initial Catalog = ViikkoProjektiDB; Persist Security Info = False; User ID = 1423526; Password =ttykyk1; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+                optionsBuilder.UseSqlServer("Server=tcp:trainwithme.database.windows.net,1433;Initial Catalog=ViikkoProjektiDB;Persist Security Info=False;User ID=jdaskljl;Password=4jklö362;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
 
@@ -43,38 +43,29 @@ namespace ViimeinenToivo.Models
                 entity.Property(e => e.Weight).HasColumnType("decimal(18, 0)");
             });
 
-            modelBuilder.Entity<NmProgramActivity>(entity =>
+            modelBuilder.Entity<NmWorkoutActivity>(entity =>
             {
-                entity.HasKey(e => e.NmPaId);
+                entity.HasKey(e => e.NmWaId);
 
-                entity.ToTable("NM_ProgramActivity");
+                entity.ToTable("NM_WorkoutActivity");
 
-                entity.Property(e => e.NmPaId).HasColumnName("NM_PA_id");
+                entity.Property(e => e.NmWaId).HasColumnName("NM_WA_id");
 
                 entity.Property(e => e.ActivityId).HasColumnName("Activity_id");
 
-                entity.Property(e => e.ProgramId).HasColumnName("Program_id");
+                entity.Property(e => e.WorkoutId).HasColumnName("Workout_id");
 
                 entity.HasOne(d => d.Activity)
-                    .WithMany(p => p.NmProgramActivity)
+                    .WithMany(p => p.NmWorkoutActivity)
                     .HasForeignKey(d => d.ActivityId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_NM_ProgramActivity_Activity");
 
-                entity.HasOne(d => d.Program)
-                    .WithMany(p => p.NmProgramActivity)
-                    .HasForeignKey(d => d.ProgramId)
+                entity.HasOne(d => d.Workout)
+                    .WithMany(p => p.NmWorkoutActivity)
+                    .HasForeignKey(d => d.WorkoutId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_NM_ProgramActivity_Program");
-            });
-
-            modelBuilder.Entity<Program>(entity =>
-            {
-                entity.Property(e => e.ProgramId).HasColumnName("Program_id");
-
-                entity.Property(e => e.Programname)
-                    .IsRequired()
-                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<Schedule>(entity =>
@@ -83,21 +74,21 @@ namespace ViimeinenToivo.Models
 
                 entity.Property(e => e.Date).HasColumnType("smalldatetime");
 
-                entity.Property(e => e.ProgramId).HasColumnName("Program_id");
-
                 entity.Property(e => e.UserId).HasColumnName("User_id");
 
-                entity.HasOne(d => d.Program)
-                    .WithMany(p => p.Schedule)
-                    .HasForeignKey(d => d.ProgramId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Schedule_Program");
+                entity.Property(e => e.WorkoutId).HasColumnName("Workout_id");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Schedule)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Schedule_User1");
+
+                entity.HasOne(d => d.Workout)
+                    .WithMany(p => p.Schedule)
+                    .HasForeignKey(d => d.WorkoutId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Schedule_Program");
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -115,6 +106,15 @@ namespace ViimeinenToivo.Models
                 entity.Property(e => e.Username)
                     .IsRequired()
                     .HasMaxLength(30);
+            });
+
+            modelBuilder.Entity<Workout>(entity =>
+            {
+                entity.Property(e => e.WorkoutId).HasColumnName("Workout_id");
+
+                entity.Property(e => e.Workoutname)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
         }
     }
