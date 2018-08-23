@@ -28,11 +28,9 @@ class User extends Component {
             cache: false,
             success: function (data) {
                 this.setState({ userdata: data }, function () {
-                    console.log(this.state);
                 });
             }.bind(this),
             error: function (xhr, status, err) {
-                console.log(err);
             }
         });
     }
@@ -47,8 +45,8 @@ class User extends Component {
         });
     }
 
-    deleteActivity(activityid) {
-        return fetch("api/ostoslista/" + activityid, {
+    deleteActivity(activityId) {
+        return fetch("api/Activities/" + activityId, {
             method: "DELETE"
         });
     }
@@ -62,7 +60,7 @@ class User extends Component {
         );
     };
 
-    deleteActivity = removableId => {
+    deleteActivityDel = removableId => {
         this.deleteActivity(removableId).then(
             function (response) {
                 this.getUserData();

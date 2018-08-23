@@ -15,7 +15,7 @@ class Workout extends Component {
                         <Schedule
                             userdata={userdata}
                             remove={this.props.remove}
-                            key={userdata.activityid}
+                            key={userdata.activityId}
                         />
                     </div>
                 );
