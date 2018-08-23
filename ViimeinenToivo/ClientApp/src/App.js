@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
 import User from './Components/User';
+import Stopwatch from './Stopwatch';
 
 class App extends Component {
     goTo(route) {
@@ -59,7 +60,8 @@ class App extends Component {
                         }
                     </Navbar.Header>
                 </Navbar>
-                <User/>
+                <User />
+                <Stopwatch/>
             </div>
         );
     }
