@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
 import Calendar from "./Components/Calendar";
+import User from './Components/User';
+import Stopwatch from './Stopwatch';
+
 
 
 
@@ -72,6 +75,10 @@ class App extends React.Component {
                 <main>
                     <Calendar />
                 </main>
+
+                <User />
+                <Stopwatch/>
+
             </div>
         );
     }
