@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
+import Calendar from "./Components/Calendar";
 
-class App extends Component {
+
+
+class App extends React.Component {
+    get displayName() {
+        return 'React.Component'
+    }
     goTo(route) {
         this.props.history.replace(`/${route}`);
     }
@@ -19,6 +25,7 @@ class App extends Component {
         const { isAuthenticated } = this.props.auth;
 
         return (
+
             <div>
                 <Navbar fluid>
                     <Navbar.Header>
@@ -58,6 +65,13 @@ class App extends Component {
                         }
                     </Navbar.Header>
                 </Navbar>
+                <span>date_range</span>
+                <span>
+                    react<b>calendar</b>
+                </span>
+                <main>
+                    <Calendar />
+                </main>
             </div>
         );
     }
