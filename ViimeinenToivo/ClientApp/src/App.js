@@ -3,9 +3,12 @@ import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
 import Calendar from "./Components/Calendar";
 import User from './Components/User';
-import Stopwatch from './Stopwatch';
-
-
+import Stopwatch from './Components/Stopwatch';
+import etsi from './Components/etsi.png';
+import kalenteri from './Components/kalenteri.png';
+import plus from './Components/plus.png';
+import login from './Components/login.png';
+import logout from './Components/logout.png';
 
 
 class App extends React.Component {
@@ -33,51 +36,59 @@ class App extends React.Component {
                 <Navbar fluid>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="#">Auth0 - React</a>
+                            <a href="#">Tervetuloa treenaamaan!</a>
                         </Navbar.Brand>
-                        <Button
-                            bsStyle="primary"
-                            className="btn-margin"
-                            onClick={this.goTo.bind(this, 'home')}
-                        >
-                            Home
-            </Button>
+                        
+                        <input          
+                            type="image"
+                            className="etsinappula"
+                            src={etsi} 
+                            //bsStyle="primary"
+                        //className="btn-margin"
+                            onClick={this.goTo.bind(this, 'search')} 
+                        />
+
+                        <input
+                            type="image"
+                            className="kalenteri"
+                            src={kalenteri}
+                            onClick={this.goTo.bind(this, 'calendar')}
+                        />
+                        <input
+                            type="image"
+                            className="plussa"
+                            src={plus}
+                            onClick={this.goTo.bind(this, 'user')}
+                        />
+                        
                         {
                             !isAuthenticated() && (
-                                <Button
-                                    id="qsLoginBtn"
-                                    bsStyle="primary"
-                                    className="btn-margin"
+                                <input
+                                    type="image"
+                                    className="userkuvalogin"
+                                    src={login}
                                     onClick={this.login.bind(this)}
-                                >
-                                    Log In
-                  </Button>
+                                />
                             )
                         }
                         {
                             isAuthenticated() && (
-                                <Button
-                                    id="qsLogoutBtn"
-                                    bsStyle="primary"
-                                    className="btn-margin"
+                                <input
+                                    type="image"
+                                    className="userkuvalogout"
+                                    src={logout}
                                     onClick={this.logout.bind(this)}
-                                >
-                                    Log Out
-                  </Button>
+                                />
+                                    
+              
                             )
                         }
                     </Navbar.Header>
                 </Navbar>
-                <span>date_range</span>
-                <span>
-                    react<b>calendar</b>
-                </span>
-                <main>
-                    <Calendar />
-                </main>
 
-                <User />
                 <Stopwatch/>
+
+               
 
             </div>
         );
