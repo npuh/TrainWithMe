@@ -2,6 +2,7 @@
 import $ from "jquery";
 import Schedule from './Schedule';
 import Workout from './Workout';
+import Activity from './Activity';
 
 const apiurl = "api/Activities";
 
@@ -75,6 +76,7 @@ class User extends Component {
                     userdata={this.state.userdata}
                     remove={this.deleteActivity}
                 />
+                <Activity saveActivity={this.newActivity}/>
             </div>
         );
     }
