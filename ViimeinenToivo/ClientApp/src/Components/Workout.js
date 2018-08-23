@@ -23,7 +23,7 @@ class Workout extends Component {
         }
         return (
             <div className="TuoteYksikko">
-                <h1>Activities list</h1>
+                <h1 className="harjoitusotsikko">Liikepankki</h1>
                 <tr>
                     <td>&nbsp;</td>
                 </tr>

@@ -1,5 +1,6 @@
 ﻿import React, { Component } from "react";
 import checkbox from './checkbox.png';
+import "./Style.css";
 
 
 class Activity extends Component {
@@ -33,11 +34,11 @@ class Activity extends Component {
         return (
             <div align="center">
                 <form onSubmit={this.laheta}>
-                    <h1>Uusi harjoite</h1>
+                    <h1>Lisää uusi liike</h1>
                     <table>
                         <tbody>
                             <tr>
-                                <td>Harjoite</td>
+                                <td>Liikkeen nimi</td>
                                 <td>
                                     <input className="form-control" value={this.state.Activityname} onChange={this.ActivityTallennus} />
                                 </td>

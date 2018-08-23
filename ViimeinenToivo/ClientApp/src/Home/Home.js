@@ -12,21 +12,21 @@ class Home extends Component {
                 {
                     isAuthenticated() && (
                         <h4>
-                            You are logged in!
+                           
               </h4>
                     )
                 }
                 {
                     !isAuthenticated() && (
                         <h4>
-                            You are not logged in! Please{' '}
+                           Et ole kirjautunut sisään!{' '}
                             <a
                                 style={{ cursor: 'pointer' }}
                                 onClick={this.login.bind(this)}
                             >
                                 Log In
                 </a>
-                            {' '}to continue.
+                            {' '}jatkaaksesi.
               </h4>
                     )
                 }
