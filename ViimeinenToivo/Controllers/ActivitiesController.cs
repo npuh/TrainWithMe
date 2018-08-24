@@ -28,10 +28,10 @@ namespace ViimeinenToivo.Controllers
         }
 
         // GET: api/Activities/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetActivity([FromRoute] int id)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetActivityById([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
+           if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -45,6 +45,27 @@ namespace ViimeinenToivo.Controllers
 
             return Ok(activity);
         }
+
+        // GET: api/Activities/name
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetActivityByName([FromRoute] string name)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var activity = await _context.Activity.Where(a => a.Activityname.ToLower() == name.ToLower()).ToListAsync();
+
+            if (activity == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(activity);
+        }
+
+
 
         // PUT: api/Activities/5
         [HttpPut("{id}")]
