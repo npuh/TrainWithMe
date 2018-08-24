@@ -32,13 +32,13 @@ class App extends React.Component {
 
         return (
 
-            <div>
+            <div className="navbar">
                 <Navbar fluid>
                     <Navbar.Header>
                         <Navbar.Brand>
                             <a href="http://localhost:3000/user">Profiili</a>
                         </Navbar.Brand>
-                        
+                        <a href="#">
                         <input          
                             type="image"
                             className="etsinappula"
@@ -46,40 +46,46 @@ class App extends React.Component {
                             //bsStyle="primary"
                         //className="btn-margin"
                             onClick={this.goTo.bind(this, 'search')} 
-                        />
-
+                         />
+                         </a>
+                        <a href="#">
                         <input
                             type="image"
                             className="kalenteri"
                             src={kalenteri}
                             onClick={this.goTo.bind(this, 'calendar')}
-                        />
+                         />
+                        </a>
+                        <a href="#">
                         <input
                             type="image"
                             className="plussa"
                             src={plus}
                             onClick={this.goTo.bind(this, 'workout')}
                         />
-                        
+                        </a>
                         {
                             !isAuthenticated() && (
+                                <a href="#">
                                 <input
                                     type="image"
                                     className="userkuvalogin"
                                     src={login}
                                     onClick={this.login.bind(this)}
                                 />
+                                </a>
                             )
                         }
                         {
                             isAuthenticated() && (
+                                <a href="#">
                                 <input
                                     type="image"
                                     className="userkuvalogout"
                                     src={logout}
                                     onClick={this.logout.bind(this)}
-                                />
-                                    
+                                    />
+                                </a>   
               
                             )
                         }
