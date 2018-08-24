@@ -30,7 +30,7 @@ class Home extends Component {
               </h4>
                     )
                 }
-                <User/>
+        
             </div>
         );
     }
