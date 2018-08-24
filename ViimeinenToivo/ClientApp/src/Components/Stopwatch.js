@@ -52,7 +52,7 @@ class Stopwatch extends React.Component {
             <div>
                 <TimeElapsed id="timer" timeElapsed={timeElapsed} />
                 <button onClick={this.toggle}>
-                    {isRunning ? 'Stop' : 'Start'}
+                    {isRunning ? 'Stop' : 'Aloita'}
                 </button>
                 <button
                     onClick={isRunning ? this.lap : this.reset}
