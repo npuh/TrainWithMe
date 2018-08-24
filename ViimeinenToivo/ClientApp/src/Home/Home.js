@@ -19,7 +19,7 @@ class Home extends Component {
                 {
                     !isAuthenticated() && (
                         <h4>
-                           Et ole kirjautunut sisään!{' '}
+                           Et ole kirjautunut sisään! Klikkaa{' '}
                             <a
                                 style={{ cursor: 'pointer' }}
                                 onClick={this.login.bind(this)}

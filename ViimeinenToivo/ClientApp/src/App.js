@@ -13,7 +13,7 @@ import logout from './Components/logout.png';
 
 class App extends React.Component {
     get displayName() {
-        return 'React.Component'
+        return 'React.Component';
     }
     goTo(route) {
         this.props.history.replace(`/${route}`);
@@ -36,7 +36,7 @@ class App extends React.Component {
                 <Navbar fluid>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="#">Tervetuloa treenaamaan!</a>
+                            <a href="http://localhost:3000/user">Profiili</a>
                         </Navbar.Brand>
                         
                         <input          
@@ -58,7 +58,7 @@ class App extends React.Component {
                             type="image"
                             className="plussa"
                             src={plus}
-                            onClick={this.goTo.bind(this, 'user')}
+                            onClick={this.goTo.bind(this, 'workout')}
                         />
                         
                         {
