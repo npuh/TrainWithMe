@@ -85,9 +85,6 @@ class App extends React.Component {
                         }
                     </Navbar.Header>
                 </Navbar>
-
-                <Stopwatch/>
-
                
 
             </div>
