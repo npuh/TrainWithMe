@@ -1,6 +1,7 @@
 ﻿import React, { Component } from "react";
 import checkbox from './checkbox.png';
 import "./Style.css";
+import './ActivityForm.css';
 
 
 class ActivityForm extends Component {
