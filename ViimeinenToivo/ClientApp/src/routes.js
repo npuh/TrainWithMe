@@ -9,6 +9,7 @@ import User from './Components/User';
 import Search from './Components/Search';
 import Calendar from './Components/Calendar';
 import Workout from './Components/Workout';
+import Profile from './Components/Profile';
 
 const auth = new Auth();
 
@@ -20,10 +21,11 @@ const handleAuthentication = ({location}) => {
 
 export const makeMainRoutes = () => {
     return (
-        <Router history={history}>
+        <Router history={history} component={App}>
             <div>
                 <Route path="/" render={(props) => <App auth={auth} {...props} />} />
                 <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
+                <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
                 <Route path="/workout" render={(props) => <Workout auth={auth} {...props} />} />
                 <Route path="/calendar" render={(props) => <Calendar auth={auth} {...props} />} />
                 <Route path="/search" render={(props) => <Search auth={auth} {...props} />} />

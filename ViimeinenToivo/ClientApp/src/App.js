@@ -36,9 +36,9 @@ class App extends React.Component {
                 <Navbar fluid>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="http://localhost:3000/user">Profiili</a>
+                            <a href="/profile">Profiili</a>
                         </Navbar.Brand>
-                        <a href="#">
+                        <a href="/search">
                         <input          
                             type="image"
                             className="etsinappula"
@@ -48,7 +48,7 @@ class App extends React.Component {
                             onClick={this.goTo.bind(this, 'search')} 
                          />
                          </a>
-                        <a href="#">
+                        <a href="/calendar">
                         <input
                             type="image"
                             className="kalenteri"
@@ -56,7 +56,7 @@ class App extends React.Component {
                             onClick={this.goTo.bind(this, 'calendar')}
                          />
                         </a>
-                        <a href="#">
+                        <a href="/workout">
                         <input
                             type="image"
                             className="plussa"
@@ -66,26 +66,22 @@ class App extends React.Component {
                         </a>
                         {
                             !isAuthenticated() && (
-                                <a href="#">
                                 <input
                                     type="image"
                                     className="userkuvalogin"
                                     src={login}
                                     onClick={this.login.bind(this)}
                                 />
-                                </a>
                             )
                         }
                         {
                             isAuthenticated() && (
-                                <a href="#">
                                 <input
                                     type="image"
                                     className="userkuvalogout"
                                     src={logout}
                                     onClick={this.logout.bind(this)}
-                                    />
-                                </a>   
+                                    /> 
               
                             )
                         }
