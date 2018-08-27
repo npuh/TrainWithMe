@@ -2,7 +2,7 @@
 import $ from "jquery";
 import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
-
+import './Workout.css';
 
 const apiurl = "api/Activities";
 
@@ -71,12 +71,20 @@ class Workout extends Component {
 
     render() {
         return (
-            <div className="User">
-                <ActivitiesList className="activitiesList"
-                    userdata={this.state.userdata}
-                    remove={this.deleteActivity}
-                />
-                <ActivityForm saveActivity={this.newActivity} />
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col">
+                        <ActivitiesList className="activitiesList"
+                            userdata={this.state.userdata}
+                            remove={this.deleteActivity}
+                        />
+                    </div>
+                    <div class="col">
+                        <ActivityForm saveActivity={this.newActivity} />
+                    </div>
+                    
+                </div>
+              
             </div>
         );
     }

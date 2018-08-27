@@ -72,7 +72,7 @@ class TimeElapsed extends React.Component {
         return {
             min: Math.floor(seconds / 60).toString(),
             sec: Math.floor(seconds % 60).toString(),
-            msec: (seconds % 1).toFixed(3).substring(2)
+            msec: (seconds % 1).toFixed(2).substring(2)
         };
     }
     render() {

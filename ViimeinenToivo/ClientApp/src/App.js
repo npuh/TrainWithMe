@@ -6,6 +6,7 @@ import kalenteri from './Components/kalenteri.png';
 import plus from './Components/plus.png';
 import login from './Components/login.png';
 import logout from './Components/logout.png';
+import barbel from './Components/barbel.png';
 
 
 class App extends React.Component {
@@ -34,15 +35,15 @@ class App extends React.Component {
                     <Navbar.Header>
                         <div className="naviloota">                         
                             <Navbar.Brand>
-                                <a href="profiili" className="profile">Profiili</a>
+                                <a href="/profile" className="profiili" >Profiili</a>
                             </Navbar.Brand>
                       
-                        <a href="/search">
+                        <a href="/train">
                         <input          
                             type="image"
-                            className="etsinappula"
-                            src={etsi} 
-                            onClick={this.goTo.bind(this, 'search')} 
+                            className="puntti"
+                            src={barbel} 
+                            onClick={this.goTo.bind(this, 'train')} 
                          />
                          </a>
                         <a href="/calendar">
@@ -74,15 +75,15 @@ class App extends React.Component {
                                 }
                             </a>
                             <a href="/logout">
-                        {
-                            isAuthenticated() && (
-                                <input
-                                    type="image"
-                                    className="userkuvalogout"
-                                    src={logout}
-                                    onClick={this.logout.bind(this)}
-                                    /> 
-              
+                                {
+                                    isAuthenticated() && (
+                                        <input
+                                            type="image"
+                                            className="userkuvalogout"
+                                            src={logout}
+                                            onClick={this.logout.bind(this)}                                     
+                                        /> 
+                                                      
                                 )                          
                                 }
                             </a>

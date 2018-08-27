@@ -9,7 +9,7 @@ class Home extends Component {
         return (
             <div className="container">
                 {
-                    isAuthenticated() && <h4>Olet kirjautunut sisään</h4>
+                    isAuthenticated() && <h4>Olet kirjautunut sisään!</h4>
                 }
                 {
                     !isAuthenticated() && <h4>Et ole kirjautunut sisään! Klikkaa{' '}
