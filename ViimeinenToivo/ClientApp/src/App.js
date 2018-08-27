@@ -62,19 +62,20 @@ class App extends React.Component {
                             onClick={this.goTo.bind(this, 'workout')}
                         />
                         </a>
-                            <a href="/login">
-                            {
-                                !isAuthenticated() && (
-                                <input
+                            
+                            {                        
+                                !isAuthenticated() && (                                  
+                                    <input                                
                                     type="image"
                                     className="userkuvalogin"
                                     src={login}
                                     onClick={this.login.bind(this)}
-                                />
-                                    )                             
+                                        />
+                                   
+                                    )
+                           
                                 }
-                            </a>
-                            <a href="/logout">
+                          
                                 {
                                     isAuthenticated() && (
                                         <input
@@ -82,11 +83,10 @@ class App extends React.Component {
                                             className="userkuvalogout"
                                             src={logout}
                                             onClick={this.logout.bind(this)}                                     
-                                        /> 
-                                                      
+                                        />                                                      
                                 )                          
                                 }
-                            </a>
+                            
                         </div>    
                     </Navbar.Header>
                 </Navbar>              
