@@ -3,6 +3,7 @@ import $ from "jquery";
 import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
 
+
 const apiurl = "api/Activities";
 
 class Workout extends Component {
@@ -71,7 +72,7 @@ class Workout extends Component {
     render() {
         return (
             <div className="User">
-                <ActivitiesList
+                <ActivitiesList className="activitiesList"
                     userdata={this.state.userdata}
                     remove={this.deleteActivity}
                 />
