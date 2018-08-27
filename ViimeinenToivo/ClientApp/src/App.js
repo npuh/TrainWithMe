@@ -32,16 +32,16 @@ class App extends React.Component {
             <div className="navbar">
                 <Navbar fluid>
                     <Navbar.Header>
-                        <Navbar.Brand>
-                            <a href="/profile">Profiili</a>
-                        </Navbar.Brand>
+                        <div className="naviloota">                         
+                            <Navbar.Brand>
+                                <a href="profiili" className="profile">Profiili</a>
+                            </Navbar.Brand>
+                      
                         <a href="/search">
                         <input          
                             type="image"
                             className="etsinappula"
                             src={etsi} 
-                            //bsStyle="primary"
-                        //className="btn-margin"
                             onClick={this.goTo.bind(this, 'search')} 
                          />
                          </a>
@@ -61,16 +61,19 @@ class App extends React.Component {
                             onClick={this.goTo.bind(this, 'workout')}
                         />
                         </a>
-                        {
-                            !isAuthenticated() && (
+                            <a href="/login">
+                            {
+                                !isAuthenticated() && (
                                 <input
                                     type="image"
                                     className="userkuvalogin"
                                     src={login}
                                     onClick={this.login.bind(this)}
                                 />
-                            )
-                        }
+                                    )                             
+                                }
+                            </a>
+                            <a href="/logout">
                         {
                             isAuthenticated() && (
                                 <input
@@ -80,12 +83,12 @@ class App extends React.Component {
                                     onClick={this.logout.bind(this)}
                                     /> 
               
-                            )
-                        }
+                                )                          
+                                }
+                            </a>
+                        </div>    
                     </Navbar.Header>
-                </Navbar>
-               
-
+                </Navbar>              
             </div>
         );
     }

@@ -124,7 +124,7 @@ main {
     position: relative;
     width: 85%;
     background: var(--neutral-color);
-    border: 1px solid var(--border-color);
+    border: 1px solid #808080;
 }
 
     .calendar .header {
