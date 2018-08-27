@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
-import Calendar from "./Components/Calendar";
-import User from './Components/User';
-import Stopwatch from './Components/Stopwatch';
 import etsi from './Components/etsi.png';
 import kalenteri from './Components/kalenteri.png';
 import plus from './Components/plus.png';

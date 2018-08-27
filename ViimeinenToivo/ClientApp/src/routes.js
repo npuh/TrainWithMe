@@ -1,15 +1,14 @@
 ﻿import React from 'react';
-import { Route, Router } from 'react-router-dom';
+import { Redirect, Route, Router } from 'react-router-dom';
 import App from './App';
 import Home from './Home/Home';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
-import User from './Components/User';
 import Search from './Components/Search';
 import Calendar from './Components/Calendar';
-import Workout from './Components/Workout';
 import Profile from './Components/Profile';
+import Workout from './Components/Workout';
 
 const auth = new Auth();
 
@@ -25,10 +24,34 @@ export const makeMainRoutes = () => {
             <div>
                 <Route path="/" render={(props) => <App auth={auth} {...props} />} />
                 <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
-                <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
-                <Route path="/workout" render={(props) => <Workout auth={auth} {...props} />} />
-                <Route path="/calendar" render={(props) => <Calendar auth={auth} {...props} />} />
-                <Route path="/search" render={(props) => <Search auth={auth} {...props} />} />
+                <Route path="/profile" render={(props) => (
+                    !auth.isAuthenticated() ? (
+                        <Redirect to="/home"/>
+) : (
+                <Profile auth={auth} {...props} />
+  )
+              )} />
+                <Route path="/workout" render={(props) => (
+                    !auth.isAuthenticated() ? (
+                        <Redirect to="/home" />
+                    ) : (
+                            <Workout auth={auth} {...props} />
+                        )
+                )} />
+                <Route path="/calendar" render={(props) => (
+                    !auth.isAuthenticated() ? (
+                        <Redirect to="/home" />
+                    ) : (
+                            <Calendar auth={auth} {...props} />
+                        )
+                )} />
+                <Route path="/search" render={(props) => (
+                    !auth.isAuthenticated() ? (
+                        <Redirect to="/home" />
+                    ) : (
+                            <Search auth={auth} {...props} />
+                        )
+                )} />
                 <Route path="/callback" render={(props) => {
                     handleAuthentication(props);
                     return <Callback {...props} />;

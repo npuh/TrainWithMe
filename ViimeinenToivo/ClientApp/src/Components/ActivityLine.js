@@ -1,7 +1,6 @@
 ﻿import React, { Component } from "react";
-import Workout from './Workout';
 
-class Schedule extends Component {
+class ActivityLine extends Component {
     remove = () => {
         this.props.remove(this.props.userdata.activityId);
     };
@@ -9,7 +8,7 @@ class Schedule extends Component {
     render() {
                 return (
                     <div>
-                        <tr className="Schedule">
+                        <tr className="ActivityLine">
               
                             <td>&nbsp;</td>
                             <button type="button" onClick={this.remove}>Poista</button>
@@ -23,4 +22,4 @@ class Schedule extends Component {
         }
     }
 
-export default Schedule;
+export default ActivityLine;

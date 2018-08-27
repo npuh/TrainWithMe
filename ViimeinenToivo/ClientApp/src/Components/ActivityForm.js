@@ -3,7 +3,7 @@ import checkbox from './checkbox.png';
 import "./Style.css";
 
 
-class Activity extends Component {
+class ActivityForm extends Component {
     state = { Activityname: "", Weight: "", Reps: "", Rounds: "", Rest: "", Duration: "" };
     ActivityTallennus = e => {
         this.setState({ Activityname: e.target.value });
@@ -90,4 +90,4 @@ class Activity extends Component {
     }
 }
 
-export default Activity;
+export default ActivityForm;

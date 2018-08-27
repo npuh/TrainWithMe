@@ -1,6 +1,7 @@
 ﻿import React, { Component } from "react";
 import ActivitiesList from './ActivitiesList';
 import Loader from './Loader';
+import Profile from './Profile';
 
 
 class Search extends Component {

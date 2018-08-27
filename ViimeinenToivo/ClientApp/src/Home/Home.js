@@ -1,5 +1,4 @@
 ﻿import React, { Component } from 'react';
-import User from '../Components/User';
 
 class Home extends Component {
     login() {
