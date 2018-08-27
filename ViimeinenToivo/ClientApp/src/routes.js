@@ -9,6 +9,7 @@ import Search from './Components/Search';
 import Calendar from './Components/Calendar';
 import Profile from './Components/Profile';
 import Workout from './Components/Workout';
+import Train from './Components/Train';
 
 const auth = new Auth();
 
@@ -45,11 +46,11 @@ export const makeMainRoutes = () => {
                             <Calendar auth={auth} {...props} />
                         )
                 )} />
-                <Route path="/search" render={(props) => (
+                <Route path="/train" render={(props) => (
                     !auth.isAuthenticated() ? (
                         <Redirect to="/home" />
                     ) : (
-                            <Search auth={auth} {...props} />
+                            <Train auth={auth} {...props} />
                         )
                 )} />
                 <Route path="/callback" render={(props) => {
