@@ -7,6 +7,9 @@ import plus from './Components/plus.png';
 import login from './Components/login.png';
 import logout from './Components/logout.png';
 import barbel from './Components/barbel.png';
+import twmlogo from './Components/twmlogo.png';
+import naama from './Components/naama.png';
+
 
 
 class App extends React.Component {
@@ -29,14 +32,21 @@ class App extends React.Component {
         const { isAuthenticated } = this.props.auth;
 
         return (
-
+            <div>                         
             <div className="navbar">
-                <Navbar fluid>
+                    <Navbar fluid>
+                        <img src={twmlogo} alt="logo" className="logo" />
                     <Navbar.Header>
-                        <div className="naviloota">                         
-                            <Navbar.Brand>
-                                <a href="/profile" className="profiili" >Profiili</a>
-                            </Navbar.Brand>
+                            <div className="naviloota">  
+                                <a href="/profile">
+                                    <input
+                                        type="image"
+                                        className="naama"
+                                        src={naama}
+                                        onClick={this.goTo.bind(this, 'profiili')}
+                                    />
+                                </a>
+               
                       
                         <a href="/train">
                         <input          
@@ -89,7 +99,8 @@ class App extends React.Component {
                             
                         </div>    
                     </Navbar.Header>
-                </Navbar>              
+                </Navbar>
+                </div>
             </div>
         );
     }
