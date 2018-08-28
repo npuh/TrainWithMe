@@ -17,17 +17,18 @@ padding: 5px 10px;
    
 }
 .kalenteri {
-    height: 45px;
-    width: 55px;
+    height: 42px;
+    width: 53px;
     /*display: inline-block;*/
     padding: 0px 0px;
+   
 }
 
 .plussa {
     height: 45px;
     width: 55px;
     /*display: inline-block;*/
-    padding: 0px 0px;
+    padding: 3px 3px;
 }
 .userkuvalogin {
     height: 45px;
@@ -41,9 +42,23 @@ padding: 5px 10px;
     width: 55px;
     /*display: inline-block;*/
     padding: 0px 0px;
+
 }
 .puntti {
-    height: 50px;
-    width: 55px;
+    height: 52px;
+    width: 75px;
     padding: 5px 10px;
+
+
+}
+.naama {
+    height: 50px;
+    width: 70px;
+    padding: 5px 10px 5px;
+}
+.logo {
+    height: 135px;
+    width: 200px;
+    padding: 5px 10px;
+    float: none;
 }

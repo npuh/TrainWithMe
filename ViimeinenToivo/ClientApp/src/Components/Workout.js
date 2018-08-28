@@ -3,12 +3,13 @@ import $ from "jquery";
 import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
 import './Workout.css';
+import ActivityFormTesti from './ActivityFormTesti';
 
 const apiurl = "api/Activities";
 
 class Workout extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             userdata: []
         };
@@ -79,8 +80,8 @@ class Workout extends Component {
                             remove={this.deleteActivity}
                         />
                     </div>
-                    <div class="col">
-                        <ActivityForm saveActivity={this.newActivity} />
+                    <div class="col">                    
+                        <ActivityFormTesti saveActivity={this.newActivity} />
                     </div>
                     
                 </div>
