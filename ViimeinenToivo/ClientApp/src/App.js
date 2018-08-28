@@ -34,8 +34,7 @@ class App extends React.Component {
         return (
             <div>                         
             <div className="navbar">
-                    <Navbar fluid>
-                        <img src={twmlogo} alt="logo" className="logo" />
+                    <Navbar fluid>                    
                     <Navbar.Header>
                             <div className="naviloota">  
                                 <a href="/profile">

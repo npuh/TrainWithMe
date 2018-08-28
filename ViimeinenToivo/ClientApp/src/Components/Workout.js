@@ -4,6 +4,10 @@ import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
 import './Workout.css';
 import ActivityFormTesti from './ActivityFormTesti';
+import Listatesti from "./Listatesti";
+
+
+
 
 const apiurl = "api/Activities";
 
@@ -75,11 +79,15 @@ class Workout extends Component {
             <div class="container">
                 <div class="row align-items-start">
                     <div class="col">
+                        <Listatesti />
+                    </div>
+                  
+                    <div class="col">
                         <ActivitiesList className="activitiesList"
                             userdata={this.state.userdata}
                             remove={this.deleteActivity}
-                        />
-                    </div>
+                        />  
+                    </div>                
                     <div class="col">                    
                         <ActivityFormTesti saveActivity={this.newActivity} />
                     </div>
