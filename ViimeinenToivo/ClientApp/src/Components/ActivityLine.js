@@ -1,4 +1,5 @@
 ﻿import React, { Component } from "react";
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class ActivityLine extends Component {
     remove = () => {
@@ -8,14 +9,13 @@ class ActivityLine extends Component {
     render() {
                 return (
                     <div>
-                        <tr className="ActivityLine">
-              
-                            <td>&nbsp;</td>
-                            <button type="button" onClick={this.remove}>Poista</button>
-                            <td>&nbsp;</td>
-                            <td>{this.props.userdata.activityname}</td>
-                            
-                        </tr>
+                        <Form className="ActivityLine">
+                            <FormGroup>
+                                <input type="text" className="activitylineformi" value={this.props.userdata.activityname} />
+                                <button type="button" onClick={this.remove}>Poista</button>
+                            </FormGroup>
+                                  </Form>
+                                                    
                     </div>
                 );
 

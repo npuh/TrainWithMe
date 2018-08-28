@@ -5,8 +5,8 @@ import ActivitiesList from "./ActivitiesList";
 import './Workout.css';
 import ActivityFormTesti from './ActivityFormTesti';
 import Listatesti from "./Listatesti";
-
-
+import Sivutus from './Sivutus';
+import Exportti from './Exportti';
 
 
 const apiurl = "api/Activities";
@@ -78,10 +78,8 @@ class Workout extends Component {
         return (
             <div class="container">
                 <div class="row align-items-start">
-                    <div class="col">
-                        <Listatesti />
-                    </div>
-                  
+
+                    <Exportti/>
                     <div class="col">
                         <ActivitiesList className="activitiesList"
                             userdata={this.state.userdata}
@@ -90,6 +88,9 @@ class Workout extends Component {
                     </div>                
                     <div class="col">                    
                         <ActivityFormTesti saveActivity={this.newActivity} />
+                    </div>
+                    <div>
+             
                     </div>
                     
                 </div>
