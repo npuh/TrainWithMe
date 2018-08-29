@@ -25,6 +25,7 @@ class ActivityForm extends Component {
         this.setState({ Duration: e.target.value });
     };
     laheta = e => {
+        console.dir(this.props);
         e.preventDefault();
         this.props.saveActivity(this.state);
         this.setState({ Activityname: "", Weight: "", Reps: "", Rounds: "", Rest: "", Duration: "" });
@@ -35,7 +36,7 @@ class ActivityForm extends Component {
         return (
             <div align="center">
                 <form onSubmit={this.laheta}>
-                    <h1>Lisää uusi liike</h1>
+                    <h1 className="h1">Lisää uusi liike</h1>
                     <table>
                         <tbody>
                             <tr>

@@ -2,6 +2,8 @@
 import ActivityLine from "./ActivityLine";
 import Sivutus from './Sivutus';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import Modifyactivity from './Modifyactivity';
+
 class ActivitiesList extends Component {
     remove = () => {
         this.props.remove(this.props.userdata.activityId);
@@ -11,22 +13,11 @@ class ActivitiesList extends Component {
     };
     render() {
         let userdataItems;
+        console.dir(this.props);
         if (this.props.userdata) {
             userdataItems = this.props.userdata.map(userdata => {
                 return (
-                  
-                    <div className="Workout">
-
-
-                        <table align="center">
-                          
-                                {userdataItems}
-                           
-                        </table>
-                        <div className="lines"></div>
-                        <form align="center">
-                            {userdataItems}</form>
-
+                  <div>
                         <ActivityLine
                             userdata={userdata}
                             remove={this.props.remove}
@@ -34,27 +25,15 @@ class ActivitiesList extends Component {
                             key={userdata.activityId}
                             id={userdata.activityId}
                             editactivity={this.props.editactivity}
-                        />
-
-
+                        />              
                     </div>
-              
-
                 );
             });
         }
-        return (
-            <div className="TuoteYksikko">
-              
-                <h1 className="harjoitusotsikko">Aktiviteetit</h1>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <div className="lines" />
-
-                    <form align="center">
-                        {userdataItems}</form>
-                   
+    return(
+            <div>              
+            <form>
+                {userdataItems}</form>
             </div>
         );
     }

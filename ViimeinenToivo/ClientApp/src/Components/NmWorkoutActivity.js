@@ -1,8 +1,9 @@
 ﻿import React, { Component } from "react";
 import "./Style.css";
-import ActivityForm from "./ActivityForm";
+import ActivityFormTesti from "./ActivityFormTesti";
 import ActivitiesList from "./ActivitiesList";
 import $ from "jquery";
+import Modifyactivity from './Modifyactivity';
 
 const apiurl = "api/Activities";
 
@@ -68,9 +69,9 @@ class NmWorkoutActivity extends Component {
         });
     }
 
-    newActivity = newactivity => {
+    luoActivity = luoactivity => {
         this.createActivity(
-            newactivity,
+            luoactivity,
             function () {
                 this.getUserData();
             }.bind(this)
@@ -107,6 +108,7 @@ class NmWorkoutActivity extends Component {
         );
     };
 
+
     modifyActivity(activity, id) {
         console.log(activity);
         console.dir(activity.Activityname);
@@ -132,20 +134,21 @@ class NmWorkoutActivity extends Component {
             <div className="container">
                 <div className="row align-items-start">
                     <div className="col">
-                        <h1>{this.props.workoutid}</h1>
+                        <h1 className="h1">{this.props.workoutid}</h1>
                         <ActivitiesList
                             userdata={this.state.searchdata}
                             remove={this.deleteActivity}
                             add={this.newActivity}
+                            editactivity={this.updateEntry}
                         />
-
+                        <h1 className="h1">Liikepankki</h1>
                         <ActivitiesList
                             userdata={this.state.userdata}
                             remove={this.deleteActivity}
                             add={this.newActivity}
                             editactivity={this.updateEntry}
-                        />
-                        <ActivityForm saveActivity={this.newActivity} />
+                        />                     
+                        <ActivityFormTesti saveActivity={this.luoActivity} />
                     </div>
                 </div>
             </div>

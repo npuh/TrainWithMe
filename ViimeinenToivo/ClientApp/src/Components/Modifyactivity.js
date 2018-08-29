@@ -7,7 +7,7 @@ class Modifyactivity extends Component {
     constructor(props) {
         super(props);
         
-        //console.log("ModifyActivity.constructor props", props);
+        console.log("ModifyActivity.constructor props", props);
         this.state = {
             Activityname: props.data.activityname,
             Weight: props.data.weight,
@@ -30,8 +30,8 @@ class Modifyactivity extends Component {
 
     paivita = (e) => {
         e.preventDefault();
-        //console.log(this.state);
-        //console.log("ModifyActivity propsit", this.props);
+        console.log(this.state);
+        console.log("ModifyActivity propsit", this.props);
         this.props.editactivity(this.state, this.props.id);
         this.setState({ Activityname:"", Weight: "", Reps: "", Rounds: "", Rest: "", Duration: "" });
     };
@@ -39,14 +39,14 @@ class Modifyactivity extends Component {
    
 
     render() {
-        //console.log("ModifyActivity.render props", this.props);
+        console.log("ModifyActivity.render props", this.props);
         
         return (
             
 
 <div align="center">
-    <form onSubmit={this.paivita}>
-        <h1>Päivitä liikettä</h1>
+                <form onSubmit={this.paivita}>
+                    <h1 className="h1">Päivitä liikettä</h1>
 
         <table>
             <tbody>

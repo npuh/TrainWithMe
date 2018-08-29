@@ -25,40 +25,29 @@ class ActivityLine extends Component {
 }
 
     render() {
+        console.dir(this.props);
         let view;
         if (this.state.trigger) {
-            view = <Modifyactivity data={this.props.userdata} id={this.props.id} editactivity={this.props.editactivity}/>
+            view = <Modifyactivity data={this.props.userdata} id={this.props.id} editactivity={this.props.editactivity} />;
 
         } else {
             view = (
-                <tbody>
-                <tr className="ActivityLine">
-
-                    <td>&nbsp;</td>
-                    <button type="button" onClick={this.remove}>Poista</button>
-                    <td>&nbsp;</td>
-                    <button type="button" onClick={this.handlePageChange}>Päivitä</button>
-                    <td>{this.props.userdata.activityname}</td>
-
-
-                    </tr>
-                    </tbody>
+                <div>
+                    <Form className="ActivityLine">
+                        <FormGroup>
+                            <input type="text" className="activitylineformi" value={this.props.userdata.activityname} />
+                            <button type="button" className="activitynappula"  onClick={this.add}>Lisää treeniin</button>
+                            <button type="button" className="activitynappula" onClick={this.remove}>Poista</button>
+                            <button type="button" className="activitynappula" onClick={this.handlePageChange}>Päivitä</button>
+                        </FormGroup>
+                    </Form>                
+                  </div>
             );
         }
 
                 return (
                     <div>
-
-                        {view}
-
-                        <Form className="ActivityLine">
-                            <FormGroup>
-                                <input type="text" className="activitylineformi" value={this.props.userdata.activityname} />
-                                <button type="button" onClick={this.add}>Lisää harjoitukseen</button>
-                            </FormGroup>
-                                  </Form>
-                                                    
-
+                        {view}                                                       
                     </div>
                 );
 

@@ -3,7 +3,7 @@ import $ from "jquery";
 import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
 import './Workout.css';
-import Modifyactivity from "./Modifyactivity";
+//import Modifyactivity from "./Modifyactivity";
 import ActivityFormTesti from './ActivityFormTesti';
 import Listatesti from "./Listatesti";
 import Sivutus from './Sivutus';
@@ -35,7 +35,7 @@ class Workout extends Component {
 
     componentDidMount() {
         this.getUserData();
-        this.setState({ clicked: false });
+        //this.setState({ clicked: false });
     }
 
     getUserData() {
@@ -51,6 +51,25 @@ class Workout extends Component {
             }
         });
     }
+
+    createActivity(activity, callback) {
+        return fetch("api/Activities", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(activity)
+        }).then(function (response) {
+            callback(response.status);
+        });
+    }
+
+    luoActivity = luoactivity => {
+        this.createActivity(
+            luoactivity,
+            function () {
+                this.getUserData();
+            }.bind(this)
+        );
+    };
 
     createWorkout(workout, callback) {
         return fetch("api/Workouts", {
@@ -106,12 +125,19 @@ class Workout extends Component {
                 return (
                     <div>
                         <Exportti />
-                        <div className="Workout">
+                        <div className="container">
+                            <div className="row align-items-start">
+                                <div className="col">                     
                             <WorkoutForm saveWorkout={this.newWorkout} />
                             <WorkoutsList
                                 userdata={this.state.userdata}
                                 moveto={this.movetoWorkout}
                             />
+                        </div>
+                        <div className="col">
+                            <ActivityFormTesti saveActivity={this.luoActivity} />
+                        </div>
+                            </div>
                         </div>
                     </div>
                 );
