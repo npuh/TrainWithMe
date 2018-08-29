@@ -35,86 +35,86 @@ class App extends React.Component {
 
         return (
             <div>
-            
-            <div className="navbar">
-                    <Navbar fluid>                    
-                    <Navbar.Header>
-                            <div className="naviloota">  
+
+                <div className="navbar">
+                    <Navbar fluid>
+                        <Navbar.Header>
+                            <div className="naviloota">
                                 <a href="/profile">
                                     <input
-        type="image"
-        className="naama"
-        src={naama}
-        onClick={this.goTo.bind(this, 'profiili')}
-    />
-</a>
-               
-                      
-<a href="/train">
-<input          
-        type="image"
-        className="puntti"
-        src={barbel} 
-        onClick={this.goTo.bind(this, 'train')} 
-     />
-     </a>
-    <a href="/calendar">
-    <input
-        type="image"
-        className="kalenteri"
-        src={kalenteri}
-        onClick={this.goTo.bind(this, 'calendar')}
-     />
-    </a>
-    <a href="/workout">
-    <input
-        type="image"
-        className="plussa"
-        src={plus}
-        onClick={this.goTo.bind(this, 'workout')}
-    />
-    </a>
-    </a>
-            <a href="/schedule">
-                <input
-        type="image"
-        className="plussa"
-        src={plus}
-        onClick={this.goTo.bind(this, 'workout')}
-    />
-</a>
-                            
-        {                        
-            !isAuthenticated() && (                                  
-                <input                                
-                type="image"
-                className="userkuvalogin"
-                src={login}
-        onClick={this.login.bind(this)}
-            />
-                                   
-        )
-                           
-        }
-                          
-    {
-        isAuthenticated() && (
-            <input
-                type="image"
-                className="userkuvalogout"
-                src={logout}
-    onClick={this.logout.bind(this)}
-/>
-)
-                                }
+                                        type="image"
+                                        className="naama"
+                                        src={naama}
+                                        onClick={this.goTo.bind(this, 'profiili')}
+                                    />
+                                </a>
+
+
+                                <a href="/train">
+                                    <input
+                                        type="image"
+                                        className="puntti"
+                                        src={barbel}
+                                        onClick={this.goTo.bind(this, 'train')}
+                                    />
+                                </a>
+                                <a href="/calendar">
+                                    <input
+                                        type="image"
+                                        className="kalenteri"
+                                        src={kalenteri}
+                                        onClick={this.goTo.bind(this, 'calendar')}
+                                    />
+                                </a>
+                                <a href="/workout">
+                                    <input
+                                        type="image"
+                                        className="plussa"
+                                        src={plus}
+                                        onClick={this.goTo.bind(this, 'workout')}
+                                    />
+                                </a>
+   
+                            <a href="/schedule">
+                                <input
+                                    type="image"
+                                    className="plussa"
+                                    src={plus}
+                                    onClick={this.goTo.bind(this, 'workout')}
+                                />
+                            </a>
+
+                            {
+                                !isAuthenticated() && (
+                                    <input
+                                        type="image"
+                                        className="userkuvalogin"
+                                        src={login}
+                                        onClick={this.login.bind(this)}
+                                    />
+
+                                )
+
+                            }
+
+                            {
+                                isAuthenticated() && (
+                                    <input
+                                        type="image"
+                                        className="userkuvalogout"
+                                        src={logout}
+                                        onClick={this.logout.bind(this)}
+                                    />
+                                )
+                            }
 
                             </div>
                         </Navbar.Header>
                     </Navbar>
-                </div>
             </div>
+            </div >
         );
-                            }
+    }
 }
 
 export default App;
