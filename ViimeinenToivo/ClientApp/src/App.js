@@ -13,6 +13,7 @@ import naama from './Components/naama.png';
 
 
 
+
 class App extends React.Component {
     get displayName() {
         return 'React.Component';
@@ -33,7 +34,8 @@ class App extends React.Component {
         const { isAuthenticated } = this.props.auth;
 
         return (
-            <div>                         
+            <div>
+            
             <div className="navbar">
                     <Navbar fluid>                    
                     <Navbar.Header>
