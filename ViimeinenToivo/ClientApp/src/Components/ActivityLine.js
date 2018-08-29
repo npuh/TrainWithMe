@@ -25,6 +25,7 @@ class ActivityLine extends Component {
 }
 
     render() {
+        console.dir(this.props);
         let view;
         if (this.state.trigger) {
             view = <Modifyactivity data={this.props.userdata} id={this.props.id} editactivity={this.props.editactivity}/>
