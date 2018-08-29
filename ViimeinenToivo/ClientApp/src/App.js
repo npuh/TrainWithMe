@@ -6,6 +6,11 @@ import kalenteri from './Components/kalenteri.png';
 import plus from './Components/plus.png';
 import login from './Components/login.png';
 import logout from './Components/logout.png';
+import barbel from './Components/barbel.png';
+import twmlogo from './Components/twmlogo.png';
+import naama from './Components/naama.png';
+
+
 
 
 class App extends React.Component {
@@ -28,21 +33,27 @@ class App extends React.Component {
         const { isAuthenticated } = this.props.auth;
 
         return (
-
+            <div>                         
             <div className="navbar">
-                <Navbar fluid>
+                    <Navbar fluid>                    
                     <Navbar.Header>
-                        <Navbar.Brand>
-                            <a href="/profile">Profiili</a>
-                        </Navbar.Brand>
-                        <a href="/search">
+                            <div className="naviloota">  
+                                <a href="/profile">
+                                    <input
+                                        type="image"
+                                        className="naama"
+                                        src={naama}
+                                        onClick={this.goTo.bind(this, 'profiili')}
+                                    />
+                                </a>
+               
+                      
+                        <a href="/train">
                         <input          
                             type="image"
-                            className="etsinappula"
-                            src={etsi} 
-                            //bsStyle="primary"
-                        //className="btn-margin"
-                            onClick={this.goTo.bind(this, 'search')} 
+                            className="puntti"
+                            src={barbel} 
+                            onClick={this.goTo.bind(this, 'train')} 
                          />
                          </a>
                         <a href="/calendar">
@@ -61,31 +72,35 @@ class App extends React.Component {
                             onClick={this.goTo.bind(this, 'workout')}
                         />
                         </a>
-                        {
-                            !isAuthenticated() && (
-                                <input
+                            
+                            {                        
+                                !isAuthenticated() && (                                  
+                                    <input                                
                                     type="image"
                                     className="userkuvalogin"
                                     src={login}
                                     onClick={this.login.bind(this)}
-                                />
-                            )
-                        }
-                        {
-                            isAuthenticated() && (
-                                <input
-                                    type="image"
-                                    className="userkuvalogout"
-                                    src={logout}
-                                    onClick={this.logout.bind(this)}
-                                    /> 
-              
-                            )
-                        }
+                                        />
+                                   
+                                    )
+                           
+                                }
+                          
+                                {
+                                    isAuthenticated() && (
+                                        <input
+                                            type="image"
+                                            className="userkuvalogout"
+                                            src={logout}
+                                            onClick={this.logout.bind(this)}                                     
+                                        />                                                      
+                                )                          
+                                }
+                            
+                        </div>    
                     </Navbar.Header>
                 </Navbar>
-               
-
+                </div>
             </div>
         );
     }

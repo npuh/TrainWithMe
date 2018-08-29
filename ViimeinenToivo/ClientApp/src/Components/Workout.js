@@ -1,8 +1,12 @@
 ﻿import React, { Component } from "react";
 import $ from "jquery";
-import WorkoutForm from "./WorkoutForm";
-import WorkoutsList from "./WorkoutsList";
-import NmWorkoutActivity from "./NmWorkoutActivity";
+import ActivityForm from './ActivityForm';
+import ActivitiesList from "./ActivitiesList";
+import './Workout.css';
+import ActivityFormTesti from './ActivityFormTesti';
+import Listatesti from "./Listatesti";
+import Sivutus from './Sivutus';
+import Exportti from './Exportti';
 
 const apiurl = "api/Workouts";
 
@@ -68,23 +72,29 @@ class Workout extends Component {
     }
 
     render() {
-        {
-            if (this.state.clicked) {
-                return <NmWorkoutActivity workoutid={this.state.workoutid}/>;
-            }
-            else {
-                return (
-                    <div className="Workout">
-                        <WorkoutForm saveWorkout={this.newWorkout} />
-                        <WorkoutsList
+        return (
+            <div>
+                <Exportti />
+                
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col">
+                        <ActivitiesList className="activitiesList"
                             userdata={this.state.userdata}
-                            moveto={this.movetoWorkout}
-                        />
+                            remove={this.deleteActivity}
+                        />  
+                    </div>                
+                    <div class="col">                    
+                        <ActivityFormTesti saveActivity={this.newActivity} />
                     </div>
-                );
-            }
-        }
-        
+                    <div>
+             
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+        );
     }
 }
 

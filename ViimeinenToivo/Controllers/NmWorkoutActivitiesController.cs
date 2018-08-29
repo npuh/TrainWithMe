@@ -24,7 +24,7 @@ namespace ViimeinenToivo.Controllers
         [HttpGet]
         public IEnumerable<NmWorkoutActivity> GetNmWorkoutActivity()
         {
-            return _context.NmWorkoutActivity;
+            return _context.NmWorkoutActivity.ToList();
         }
 
         // GET: api/NmWorkoutActivities/5
