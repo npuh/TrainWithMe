@@ -52,6 +52,25 @@ class Workout extends Component {
         });
     }
 
+    createActivity(activity, callback) {
+        return fetch("api/Activities", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(activity)
+        }).then(function (response) {
+            callback(response.status);
+        });
+    }
+
+    luoActivity = luoactivity => {
+        this.createActivity(
+            luoactivity,
+            function () {
+                this.getUserData();
+            }.bind(this)
+        );
+    };
+
     createWorkout(workout, callback) {
         return fetch("api/Workouts", {
             method: "POST",
@@ -115,7 +134,7 @@ class Workout extends Component {
                             />
                         </div>
                         <div class="col">
-                            <ActivityFormTesti saveActivity={this.newActivity} />
+                            <ActivityFormTesti saveActivity={this.luoActivity} />
                         </div>
                             </div>
                         </div>

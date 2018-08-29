@@ -24,6 +24,7 @@ export default class ActivityFormTesti extends React.Component {
     };
     laheta = e => {
         e.preventDefault();
+        console.log(this.props);
         this.props.saveActivity(this.state);
         this.setState({ Activityname: "", Weight: "", Reps: "", Rounds: "", Rest: "", Duration: "" });
     };
