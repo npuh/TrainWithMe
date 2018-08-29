@@ -11,16 +11,23 @@ class ActivitiesList extends Component {
             userdataItems = this.props.userdata.map(userdata => {
                 return (
                     <div className="Workout">
-                        <div className="lines"></div>
+
+
                         <table align="center">
-                            {userdataItems}</table>
+                          
+                                {userdataItems}
+                           
+                        </table>
 
                         <ActivityLine
                             userdata={userdata}
                             remove={this.props.remove}
                             key={userdata.activityId}
+                            id={userdata.activityId}
+                            editactivity={this.props.editactivity}
                         />
-                        </div>
+
+                    </div>
                 );
             });
         }
@@ -32,7 +39,9 @@ class ActivitiesList extends Component {
                 </tr>
                 <div className="lines" />
                 <table align="center">
-                    {userdataItems}</table>
+                {userdataItems}
+                
+                </table>
             </div>
         );
     }

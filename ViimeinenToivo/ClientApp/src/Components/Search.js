@@ -1,50 +1,61 @@
-﻿import React, { Component } from "react";
-import ActivitiesList from './ActivitiesList';
-import Loader from './Loader';
-import Profile from './Profile';
+﻿//import React, { Component } from "react";
+//import ActivitiesList from './ActivitiesList';
+//import Loader from './Loader';
+//import Profile from './Profile';
 
 
-class Search extends Component {
+//class Search extends Component {
+//    constructor() {
+//        super();
+//        this.state = {
+//            userdata: []
+//        };
+//    }
+  
+//};
 
-    state = {
-        activities: [],
-        activityName: "",
-        isFetching: false
-    };
+////componentWillMount() {
+////    this.getUserData();
+////}
 
-    onActivitiesInputChange = e => {
-        this.setState({ activityName: e.target.value, isFetching: true });
+////componentDidMount() {
+////    this.getUserData();
+////}
 
-        fetch(`http://localhost:3000/api/activities?q=${e.target.value}`)
-            .then(response => response.json())
-            .then(json => this.setState({ activities: json, isFetching: false }));
-    };
-    
-    render() {
-        const { activities, activityName, isFetching } = this.state;
-        return (
-            <div>
-                <input
-                    value={activityName}
-                    type="text"
-                    onChange={this.onActivitiesInputChange}
-                />
-                <div />
-                {!isFetching &&
-                    activities.length === 0 &&
-                    activityName.trim() === "" && (
-                        <p>Kirjoita liikkeen nimi</p>
-                    )}
-                {!isFetching &&
-                    activities.length === 0 &&
-                    activityName.trim() !== "" && (
-                        <p>Liikettä ei löydy</p>
-                    )}
-                {isFetching && <Loader />}
-                {!isFetching && <ActivitiesList list={this.state.activities} />}
-            </div>
-        );
-    }
-}
+//getUserData() {
+//    $.ajax({
+//        url: apiurl,
+//        dataType: "json",
+//        cache: false,
+//        success: function (data) {
+//            this.setState({ userdata: data }, function () {
+//            });
+//        }.bind(this),
+//        error: function (xhr, status, err) {
+//        }
+//    });
+//}
 
-export default Search;
+//modifyActivity(activity, id) {
+//       console.log(activity);
+//       console.dir(activity.Activityname);
+//       return fetch("api/Activities/" + id, {
+//            method: "PUT",
+//            headers: { "Content-Type": "application/json" },
+//            body: JSON.stringify(activity)
+//        }).then(function (response) {
+//            console.log(response.status);
+//            //callback(response.status);
+//        });
+//    }
+//    render() {
+        
+//        return (
+//            <div>
+               
+//            </div>
+//        );
+//    }
+//}
+
+//export default Search;

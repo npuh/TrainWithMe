@@ -75,7 +75,10 @@ namespace ViimeinenToivo.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            if (activity.ActivityId == 0)
+            {
+                activity.ActivityId = id;
+            }
             if (id != activity.ActivityId)
             {
                 return BadRequest();
@@ -101,6 +104,50 @@ namespace ViimeinenToivo.Controllers
 
             return NoContent();
         }
+
+        //// PUT: api/Activities/{name}
+        //[HttpPut("{name}")]
+        //public async Task<IActionResult> PutActivityByName([FromRoute] string name, [FromBody] Activity activity)
+        //{
+
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    if (activity.Activityname == "" )
+        //    {
+        //        activity.Activityname = name;
+        //    }
+        //    if (name != activity.Activityname)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    //var act = await _context.Activity.Where(a => a.Activityname.ToLower() == name.ToLower()).ToListAsync();
+        //    var a = _context.Activity.Where(z => z.Activityname == name).First();
+        //    a.Duration = activity.Duration;
+            
+
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!ActivityExists(name))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return NoContent();
+        //}
+
+
 
         // POST: api/Activities
         [HttpPost]
@@ -141,6 +188,11 @@ namespace ViimeinenToivo.Controllers
         private bool ActivityExists(int id)
         {
             return _context.Activity.Any(e => e.ActivityId == id);
+        }
+
+        private bool ActivityExists(string name)
+        {
+            return _context.Activity.Any(e => e.Activityname == name);
         }
     }
 }
