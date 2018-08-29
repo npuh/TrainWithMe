@@ -42,7 +42,7 @@ class Exportti extends Component {
     render() {
         const userdata = this.state.userdata; 
         return (
-            <ExcelFile element={<button onClick={this.getUserData} > Lataa Data</ button>} >
+            <ExcelFile element={<button onClick={this.getUserData} className="excelbutton">Excel</ button>} >
                 <ExcelSheet data={userdata} name="Liikkeet">
                     <ExcelColumn label="Liikkeen nimi" value="activityname" />
                     <ExcelColumn label="Paino/kg" value="weight" />

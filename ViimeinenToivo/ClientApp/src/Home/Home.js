@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import twmlogo from '../Components/twmlogo.png';
-
+// <img src={twmlogo} alt="logo" className="logo" />
 class Home extends Component {
     login() {
         this.props.auth.login();
@@ -9,7 +9,7 @@ class Home extends Component {
         const { isAuthenticated } = this.props.auth;
         return (
             <div className="container">
-                <img src={twmlogo} alt="logo" className="logo" />
+               
                 {
                     isAuthenticated() && <h4>Olet kirjautunut sisään!</h4>
                 }

@@ -76,10 +76,11 @@ class Workout extends Component {
 
     render() {
         return (
+            <div>
+                <Exportti />
+                
             <div class="container">
                 <div class="row align-items-start">
-
-                    <Exportti/>
                     <div class="col">
                         <ActivitiesList className="activitiesList"
                             userdata={this.state.userdata}
@@ -94,7 +95,7 @@ class Workout extends Component {
                     </div>
                     
                 </div>
-              
+                </div>
             </div>
         );
     }

@@ -12,6 +12,7 @@ import naama from './Components/naama.png';
 
 
 
+
 class App extends React.Component {
     get displayName() {
         return 'React.Component';
