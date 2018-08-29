@@ -3,6 +3,7 @@ import "./Style.css";
 import ActivityFormTesti from "./ActivityFormTesti";
 import ActivitiesList from "./ActivitiesList";
 import $ from "jquery";
+import Modifyactivity from './Modifyactivity';
 
 const apiurl = "api/Activities";
 
@@ -68,9 +69,9 @@ class NmWorkoutActivity extends Component {
         });
     }
 
-    newActivity = newactivity => {
+    luoActivity = luoactivity => {
         this.createActivity(
-            newactivity,
+            luoactivity,
             function () {
                 this.getUserData();
             }.bind(this)
@@ -107,6 +108,7 @@ class NmWorkoutActivity extends Component {
         );
     };
 
+
     modifyActivity(activity, id) {
         console.log(activity);
         console.dir(activity.Activityname);
@@ -137,6 +139,7 @@ class NmWorkoutActivity extends Component {
                             userdata={this.state.searchdata}
                             remove={this.deleteActivity}
                             add={this.newActivity}
+                            editactivity={this.updateEntry}
                         />
 
                         <ActivitiesList
@@ -145,7 +148,8 @@ class NmWorkoutActivity extends Component {
                             add={this.newActivity}
                             editactivity={this.updateEntry}
                         />
-                        <ActivityFormTesti saveActivity={this.newActivity} />
+                        <ActivityForm saveActivity={this.luoActivity} />
+
                     </div>
                 </div>
             </div>

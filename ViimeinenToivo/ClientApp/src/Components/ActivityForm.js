@@ -25,6 +25,7 @@ class ActivityForm extends Component {
         this.setState({ Duration: e.target.value });
     };
     laheta = e => {
+        console.dir(this.props);
         e.preventDefault();
         this.props.saveActivity(this.state);
         this.setState({ Activityname: "", Weight: "", Reps: "", Rounds: "", Rest: "", Duration: "" });

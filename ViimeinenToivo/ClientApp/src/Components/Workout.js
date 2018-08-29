@@ -3,7 +3,7 @@ import $ from "jquery";
 import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
 import './Workout.css';
-import Modifyactivity from "./Modifyactivity";
+//import Modifyactivity from "./Modifyactivity";
 import ActivityFormTesti from './ActivityFormTesti';
 import Listatesti from "./Listatesti";
 import Sivutus from './Sivutus';
@@ -35,7 +35,7 @@ class Workout extends Component {
 
     componentDidMount() {
         this.getUserData();
-        this.setState({ clicked: false });
+        //this.setState({ clicked: false });
     }
 
     getUserData() {
