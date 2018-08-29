@@ -21,11 +21,11 @@ class WorkoutForm extends Component {
         return (
             <div align="center">
                 <form onSubmit={this.laheta}>
-                    <h1>Add new workout</h1>
+                    <h1 className="h1">Lisää uusi treeni</h1>
                     <table>
                         <tbody>
                             <tr>
-                                <td>Workoutname</td>
+                                <td>Treenin nimi</td>
                                 <td>
                                     <input className="form-control" value={this.state.Workoutname} onChange={this.WorkoutSave} />
                                 </td>

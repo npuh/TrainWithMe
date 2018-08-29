@@ -10,7 +10,7 @@
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-    background-color: lightgrey !important;
+    background-color: orange;
 }
 
 
