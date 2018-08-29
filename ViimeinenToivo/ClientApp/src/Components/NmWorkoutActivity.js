@@ -148,7 +148,7 @@ class NmWorkoutActivity extends Component {
                             add={this.newActivity}
                             editactivity={this.updateEntry}
                         />
-                        <ActivityForm saveActivity={this.luoActivity} />
+                        <ActivityFormTesti saveActivity={this.luoActivity} />
 
                     </div>
                 </div>
