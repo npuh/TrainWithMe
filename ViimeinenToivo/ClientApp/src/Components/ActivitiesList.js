@@ -17,19 +17,7 @@ class ActivitiesList extends Component {
         if (this.props.userdata) {
             userdataItems = this.props.userdata.map(userdata => {
                 return (
-                  
-                    <div className="Workout">
-
-
-                        <table align="center">
-                          
-                                {userdataItems}
-                           
-                        </table>
-                        <div className="lines"></div>
-                        <form align="center">
-                            {userdataItems}</form>
-
+                  <div>
                         <ActivityLine
                             userdata={userdata}
                             remove={this.props.remove}
@@ -37,27 +25,15 @@ class ActivitiesList extends Component {
                             key={userdata.activityId}
                             id={userdata.activityId}
                             editactivity={this.props.editactivity}
-                        />
-
-
+                        />              
                     </div>
-              
-
                 );
             });
         }
-        return (
-            <div className="TuoteYksikko">
-              
-                <h1 className="h1">Aktiviteetit</h1>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <div className="lines" />
-
-                    <form align="center">
-                        {userdataItems}</form>
-                   
+    return(
+            <div>              
+            <form>
+                {userdataItems}</form>
             </div>
         );
     }

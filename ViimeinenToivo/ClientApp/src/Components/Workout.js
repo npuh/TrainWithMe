@@ -124,16 +124,16 @@ class Workout extends Component {
                 return (
                     <div>
                         <Exportti />
-                        <div class="container">
-                            <div class="row align-items-start">
-                                <div class="col">                     
+                        <div className="container">
+                            <div className="row align-items-start">
+                                <div className="col">                     
                             <WorkoutForm saveWorkout={this.newWorkout} />
                             <WorkoutsList
                                 userdata={this.state.userdata}
                                 moveto={this.movetoWorkout}
                             />
                         </div>
-                        <div class="col">
+                        <div className="col">
                             <ActivityFormTesti saveActivity={this.luoActivity} />
                         </div>
                             </div>
