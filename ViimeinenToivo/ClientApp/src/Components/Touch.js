@@ -1,13 +1,27 @@
-﻿import React, { Component } from 'react';
-import { Holdable } from 'react-touch';
+﻿import React from "react";
+import ReactTouchEvents from "react-touch-events";
 
-class Touch extends Component {
+
+class Touch extends React.Components {
+    handleTap() {
+        console.log("tapped!");
+    }
+    handleSwipe(direction) {
+        switch (direction) {
+            case "top":
+            case "bottom":
+            case "left":
+            case "right":
+
+                console.log(`you swiped ${direction}`);
+        }
+    }
     render() {
-        return (
-            <Holdable onHoldComplete={handleHold}>
-                ({holdProgress}) => <button style={{ opacity: holdProgress }} />
-            </Holdable>
-        );
+        <ReactTouchEvents
+            onTap={this.handleTap.bind(this)}
+            onSwipe={this.handleSwipe.bind(this)}
+        >
+            <button>Tap me</button>
+        </ReactTouchEvents>;
     }
 }
-export default Touch;
