@@ -1,6 +1,7 @@
 ﻿import React, { Component } from "react";
 import WorkoutLine from "./WorkoutLine";
 
+
 class WorkoutsList extends Component {
     remove = () => {
         this.props.remove(this.props.userdata.WorkoutId);
@@ -17,7 +18,6 @@ class WorkoutsList extends Component {
                         <div className="lines"></div>
                         <table align="center">
                             {userdataItems}</table>
-
                         <WorkoutLine
                             userdata={userdata}
                             remove={this.props.remove}
