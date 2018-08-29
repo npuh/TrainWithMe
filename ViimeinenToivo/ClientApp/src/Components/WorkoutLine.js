@@ -1,5 +1,5 @@
 ﻿import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class WorkoutLine extends Component {
@@ -14,11 +14,10 @@ class WorkoutLine extends Component {
                 return (
                     <div>
                         <ListGroup>
-                            <ListGroupItem className="listaitemi"><button type="button" className="nappi" size="lg" onClick={this.moveto}>Siirry treeniin</button><b className="nimi">{this.props.userdata.workoutname}</b></ListGroupItem>                     
-                        </ListGroup>               
+                            <ListGroupItem className="listaitemi"><button type="button" className="nappi" size="lg" onClick={this.moveto}>Siirry</button><p className="nimi">{this.props.userdata.workoutname}</p></ListGroupItem>
+                        </ListGroup>
                     </div>
                 );
-
         }
     }
 

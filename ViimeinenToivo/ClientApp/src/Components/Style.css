@@ -88,6 +88,13 @@ padding: 5px 10px;
 }
 .nimi{
     font-size: 1.5em;
-    text-align: justify;
-   
+    text-align: right; 
+    padding-top: 0px;
+}
+.alasvetovalikko{
+    height: 85px;
+    width: 250px;
+    border: 1px solid #808080;
+    background-color: #ffffff;
+    padding-top: 0px;
 }
