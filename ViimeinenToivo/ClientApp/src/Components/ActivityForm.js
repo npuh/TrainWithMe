@@ -41,37 +41,37 @@ class ActivityForm extends Component {
                             <tr>
                                 <td>Liikkeen nimi</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Activityname} onChange={this.ActivityTallennus} />
+                                    <input className="form-control" value={this.state.Activityname} onChange={this.ActivityTallennus} placeholder="Liikkeen nimi"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kuorma</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Weight} onChange={this.WeightTallennus} />
+                                    <input className="form-control" value={this.state.Weight} onChange={this.WeightTallennus} placeholder="Painot/kg"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Toistot</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Reps} onChange={this.RepsTallennus} />
+                                    <input className="form-control" value={this.state.Reps} onChange={this.RepsTallennus} placeholder="Toistot" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kierrokset</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Rounds} onChange={this.RoundsTallennus} />
+                                    <input className="form-control" value={this.state.Rounds} onChange={this.RoundsTallennus} placeholder="Sarjat" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>Lepo</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Rest} onChange={this.RestTallennus} />
+                                    <input className="form-control" value={this.state.Rest} onChange={this.RestTallennus} placeholder="Lepo"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kesto</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Duration} onChange={this.DurationTallennus} />
+                                    <input className="form-control" value={this.state.Duration} onChange={this.DurationTallennus} placeholder="Kesto" />
                                 </td>
                             </tr>
                             <tr>

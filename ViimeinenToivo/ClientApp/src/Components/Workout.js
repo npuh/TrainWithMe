@@ -4,25 +4,35 @@ import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
 import './Workout.css';
 import Modifyactivity from "./Modifyactivity";
+import ActivityFormTesti from './ActivityFormTesti';
+import Listatesti from "./Listatesti";
+import Sivutus from './Sivutus';
+import Exportti from './Exportti';
 
 
-
-const apiurl = "api/Activities";
+const apiurl = "api/Workouts";
 
 class Workout extends Component {
+
+
     constructor() {
         super();
         this.state = {
-            userdata: []
+            userdata: [],
+            clicked: false,
+            workoutid : null
+
         };
     }
 
     componentWillMount() {
         this.getUserData();
+        
     }
 
     componentDidMount() {
         this.getUserData();
+        this.setState({ clicked: false });
     }
 
     getUserData() {
@@ -39,38 +49,29 @@ class Workout extends Component {
         });
     }
 
-    createActivity(activity, callback) {
-        return fetch("api/Activities", {
+    createWorkout(workout, callback) {
+        return fetch("api/Workouts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(activity)
+            body: JSON.stringify(workout)
         }).then(function (response) {
             callback(response.status);
         });
     }
 
-    deleteActivity(activityId) {
-        return fetch("api/Activities/" + activityId, {
-            method: "DELETE"
-        });
-    }
-
-    newActivity = newactivity => {
-        this.createActivity(
-            newactivity,
+    newWorkout = newworkout => {
+        this.createWorkout(
+            newworkout,
             function () {
                 this.getUserData();
             }.bind(this)
         );
     };
 
-    deleteActivityDel = removableId => {
-        this.deleteActivity(removableId).then(
-            function (response) {
-                this.getUserData();
-            }.bind(this)
-        );
-    };
+    movetoWorkout = (workoutId) => {
+        this.setState({ clicked : true });
+        this.setState({ workoutid : workoutId });
+    }
 
     modifyActivity(activity, id) {
         console.log(activity);
@@ -94,6 +95,8 @@ class Workout extends Component {
 
     render() {
         return (
+               <div>
+                <Exportti />                              
             <div className="container">
                 <div className="row align-items-start">
                     <div className="col">
@@ -105,12 +108,10 @@ class Workout extends Component {
                     />
                     </div>
                     <div class="col">
-                        <ActivityForm saveActivity={this.newActivity} />
-                      
-                    </div>
-                    
+                        <ActivityForm saveActivity={this.newActivity} />          
+                    </div>                   
                 </div>
-              
+                </div>
             </div>
         );
     }
