@@ -45,8 +45,8 @@ class Modifyactivity extends Component {
             
 
 <div align="center">
-    <form onSubmit={this.paivita}>
-        <h1>Päivitä liikettä</h1>
+                <form onSubmit={this.paivita}>
+                    <h1 className="h1">Päivitä liikettä</h1>
 
         <table>
             <tbody>

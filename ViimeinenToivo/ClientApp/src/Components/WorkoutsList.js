@@ -30,7 +30,7 @@ class WorkoutsList extends Component {
         }
         return (
             <div className="TuoteYksikko">
-                <h1 className="harjoitusotsikko">WorkoutsList</h1>
+                <h1 className="h1">Treenilista</h1>
                 <tr>
                     <td>&nbsp;</td>
                 </tr>
