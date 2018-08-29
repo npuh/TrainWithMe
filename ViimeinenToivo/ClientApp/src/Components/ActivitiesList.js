@@ -16,6 +16,13 @@ class ActivitiesList extends Component {
                 return (
                   
                     <div className="Workout">
+
+
+                        <table align="center">
+                          
+                                {userdataItems}
+                           
+                        </table>
                         <div className="lines"></div>
                         <form align="center">
                             {userdataItems}</form>
@@ -25,8 +32,15 @@ class ActivitiesList extends Component {
                             remove={this.props.remove}
                             add={this.props.add}
                             key={userdata.activityId}
+                            id={userdata.activityId}
+                            editactivity={this.props.editactivity}
                         />
+
+
+                    </div>
+
                         </div>               
+
                 );
             });
         }
@@ -41,7 +55,7 @@ class ActivitiesList extends Component {
 
                     <form align="center">
                         {userdataItems}</form>
-                    
+                   
             </div>
         );
     }
