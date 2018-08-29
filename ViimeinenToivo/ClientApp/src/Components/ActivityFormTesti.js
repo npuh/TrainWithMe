@@ -34,7 +34,7 @@ export default class ActivityFormTesti extends React.Component {
         return (
 
             <Form onSubmit={this.laheta} className="kysely">
-                <h1>Lisää uusi liike </h1>
+                <h1 className="h1">Lisää uusi liike </h1>
                 <FormGroup>
                     <input type="text" className="form-control" value={this.state.Activityname} onChange={this.ActivityTallennus} placeholder="Liikkeen nimi" />
                     <FormGroup />
@@ -52,7 +52,7 @@ export default class ActivityFormTesti extends React.Component {
                         <input type="text" className="form-control" value={this.state.Rest} onChange={this.RestTallennus} placeholder="Lepo 00:00:00" />
                     </FormGroup>
                     <FormGroup>
-                        <input type="text" className="form-control" value={this.state.Duration} onChange={this.DurationTallennus} placeholder="Kesto 00:00:00" />
+                        <input type="text" className="form-control" value={this.state.Duration} onChange={this.DurationTallennus} placeholder="Kesto 00:00:00"  />
                     </FormGroup>
                     <input className="Checkbox" type="image" src={checkbox} alt="Lisää" />
                 </FormGroup>

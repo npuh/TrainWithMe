@@ -42,7 +42,7 @@ class Profile extends Component {
         return (
             <div className="container">
                 <div className="profile-area">
-                    <h1>Omat tiedot: {this.state.metadata} {profile.name}</h1>
+                    <h1 className="h1">Omat tiedot: {this.state.metadata} {profile.name}</h1>
                     <Panel header="Profile">
                         <img src={profile.picture} alt="profile" />
                         <div>

@@ -1,6 +1,6 @@
 ﻿import React, { Component } from "react";
 import "./Style.css";
-import ActivityForm from "./ActivityForm";
+import ActivityFormTesti from "./ActivityFormTesti";
 import ActivitiesList from "./ActivitiesList";
 import $ from "jquery";
 import Modifyactivity from './Modifyactivity';
@@ -134,7 +134,7 @@ class NmWorkoutActivity extends Component {
             <div className="container">
                 <div className="row align-items-start">
                     <div className="col">
-                        <h1>{this.props.workoutid}</h1>
+                        <h1 className="h1">{this.props.workoutid}</h1>
                         <ActivitiesList
                             userdata={this.state.searchdata}
                             remove={this.deleteActivity}
@@ -149,6 +149,7 @@ class NmWorkoutActivity extends Component {
                             editactivity={this.updateEntry}
                         />
                         <ActivityForm saveActivity={this.luoActivity} />
+
                     </div>
                 </div>
             </div>

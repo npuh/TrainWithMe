@@ -49,7 +49,7 @@ class ActivitiesList extends Component {
         return (
             <div className="TuoteYksikko">
               
-                <h1 className="harjoitusotsikko">Aktiviteetit</h1>
+                <h1 className="h1">Aktiviteetit</h1>
                 <tr>
                     <td>&nbsp;</td>
                 </tr>
