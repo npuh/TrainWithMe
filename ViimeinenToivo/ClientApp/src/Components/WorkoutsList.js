@@ -1,8 +1,23 @@
 ﻿import React, { Component } from "react";
 import WorkoutLine from "./WorkoutLine";
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 
 class WorkoutsList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            dropdownOpen: false
+        };
+    }
+
+    toggle() {
+        this.setState(prevState => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    }
     remove = () => {
         this.props.remove(this.props.userdata.WorkoutId);
     };
@@ -15,7 +30,6 @@ class WorkoutsList extends Component {
             userdataItems = this.props.userdata.map(userdata => {
                 return (
                     <div className="Workouts">
-                        <div className="lines"></div>
                         <table align="center">
                             {userdataItems}</table>
                         <WorkoutLine
@@ -29,15 +43,14 @@ class WorkoutsList extends Component {
             });
         }
         return (
-            <div className="TuoteYksikko">
-                <h1 className="h1">Treenilista</h1>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <div className="lines" />
-                <table align="center">
-                    {userdataItems}</table>
-            </div>
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret className="alasvetovalikko">
+                    <h1 className="h1">Treenilista</h1>
+        </DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem header>{userdataItems}</DropdownItem>          
+                </DropdownMenu>
+            </Dropdown>
         );
     }
 }
