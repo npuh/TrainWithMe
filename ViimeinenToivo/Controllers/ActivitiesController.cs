@@ -65,6 +65,25 @@ namespace ViimeinenToivo.Controllers
             return Ok(activity);
         }
 
+        // GET: api/Activities/ByWorkId
+        [HttpGet("ByWorkId/{id:int}")]
+        public async Task<IActionResult> GetActivityByWorkId([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var activity = await _context.NmWorkoutActivity.Where(a => a.WorkoutId == id).Select(a=>a.Activity).ToListAsync<Activity>();
+
+            if (activity == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(activity);
+        }
+
 
 
         // PUT: api/Activities/5

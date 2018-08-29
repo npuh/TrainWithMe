@@ -1,28 +1,28 @@
 ﻿import React, { Component } from "react";
-import ActivityLine from "./ActivityLine";
+import WorkoutLine from "./WorkoutLine";
 
-class ActivitiesList extends Component {
+class WorkoutsList extends Component {
     remove = () => {
-        this.props.remove(this.props.userdata.activityId);
+        this.props.remove(this.props.userdata.WorkoutId);
     };
-    add = () => {
-        this.props.add(this.props.userdata.activityId);
+    moveto = () => {
+        this.props.moveto(this.props.userdata.WorkoutId);
     };
     render() {
         let userdataItems;
         if (this.props.userdata) {
             userdataItems = this.props.userdata.map(userdata => {
                 return (
-                    <div className="Workout">
+                    <div className="Workouts">
                         <div className="lines"></div>
                         <table align="center">
                             {userdataItems}</table>
 
-                        <ActivityLine
+                        <WorkoutLine
                             userdata={userdata}
                             remove={this.props.remove}
-                            add={this.props.add}
-                            key={userdata.activityId}
+                            moveto={this.props.moveto}
+                            key={userdata.workoutId}
                         />
                         </div>
                 );
@@ -30,7 +30,7 @@ class ActivitiesList extends Component {
         }
         return (
             <div className="TuoteYksikko">
-                <h1 className="harjoitusotsikko">ActivitiesList</h1>
+                <h1 className="harjoitusotsikko">WorkoutsList</h1>
                 <tr>
                     <td>&nbsp;</td>
                 </tr>
@@ -42,4 +42,4 @@ class ActivitiesList extends Component {
     }
 }
 
-export default ActivitiesList;
+export default WorkoutsList;

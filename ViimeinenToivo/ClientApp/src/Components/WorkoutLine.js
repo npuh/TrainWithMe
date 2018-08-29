@@ -1,24 +1,24 @@
 ﻿import React, { Component } from "react";
 
-class ActivityLine extends Component {
+class WorkoutLine extends Component {
     remove = () => {
-        this.props.remove(this.props.userdata.activityId);
+        this.props.remove(this.props.userdata.workoutId);
     };
-    add = () => {
-        this.props.add(this.props.userdata.activityId);
+    moveto = () => {
+        this.props.moveto(this.props.userdata.workoutId);
     };
 
     render() {
                 return (
                     <div>
-                        <tr className="ActivityLine">
+                        <tr className="WorkoutLine">
               
                             <td>&nbsp;</td>
                             <button type="button" onClick={this.remove}>Poista</button>
                             <td>&nbsp;</td>
-                            <button type="button" onClick={this.add}>Lisää harjoitukseen</button>
+                            <button type="button" onClick={this.moveto}>Siirry workoutiin</button>
                             <td>&nbsp;</td>
-                            <td>{this.props.userdata.activityname}</td>
+                            <td>{this.props.userdata.workoutname}</td>
                             
                         </tr>
                     </div>
@@ -27,4 +27,4 @@ class ActivityLine extends Component {
         }
     }
 
-export default ActivityLine;
+export default WorkoutLine;

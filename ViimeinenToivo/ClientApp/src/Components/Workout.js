@@ -1,24 +1,32 @@
 ﻿import React, { Component } from "react";
 import $ from "jquery";
-import ActivityForm from './ActivityForm';
-import ActivitiesList from "./ActivitiesList";
+import WorkoutForm from "./WorkoutForm";
+import WorkoutsList from "./WorkoutsList";
+import NmWorkoutActivity from "./NmWorkoutActivity";
 
-const apiurl = "api/Activities";
+const apiurl = "api/Workouts";
 
 class Workout extends Component {
+
+
     constructor() {
         super();
         this.state = {
-            userdata: []
+            userdata: [],
+            clicked: false,
+            workoutid : null
+
         };
     }
 
     componentWillMount() {
         this.getUserData();
+        
     }
 
     componentDidMount() {
         this.getUserData();
+        this.setState({ clicked: false });
     }
 
     getUserData() {
@@ -35,49 +43,48 @@ class Workout extends Component {
         });
     }
 
-    createActivity(activity, callback) {
-        return fetch("api/Activities", {
+    createWorkout(workout, callback) {
+        return fetch("api/Workouts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(activity)
+            body: JSON.stringify(workout)
         }).then(function (response) {
             callback(response.status);
         });
     }
 
-    deleteActivity(activityId) {
-        return fetch("api/Activities/" + activityId, {
-            method: "DELETE"
-        });
-    }
-
-    newActivity = newactivity => {
-        this.createActivity(
-            newactivity,
+    newWorkout = newworkout => {
+        this.createWorkout(
+            newworkout,
             function () {
                 this.getUserData();
             }.bind(this)
         );
     };
 
-    deleteActivityDel = removableId => {
-        this.deleteActivity(removableId).then(
-            function (response) {
-                this.getUserData();
-            }.bind(this)
-        );
-    };
+    movetoWorkout = (workoutId) => {
+        this.setState({ clicked : true });
+        this.setState({ workoutid : workoutId });
+    }
 
     render() {
-        return (
-            <div className="User">
-                <ActivitiesList
-                    userdata={this.state.userdata}
-                    remove={this.deleteActivity}
-                />
-                <ActivityForm saveActivity={this.newActivity} />
-            </div>
-        );
+        {
+            if (this.state.clicked) {
+                return <NmWorkoutActivity workoutid={this.state.workoutid}/>;
+            }
+            else {
+                return (
+                    <div className="Workout">
+                        <WorkoutForm saveWorkout={this.newWorkout} />
+                        <WorkoutsList
+                            userdata={this.state.userdata}
+                            moveto={this.movetoWorkout}
+                        />
+                    </div>
+                );
+            }
+        }
+        
     }
 }
 
