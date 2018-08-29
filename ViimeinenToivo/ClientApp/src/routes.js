@@ -10,6 +10,7 @@ import Calendar from './Components/Calendar';
 import Profile from './Components/Profile';
 import Workout from './Components/Workout';
 import Train from './Components/Train';
+import Schedule from './Components/Schedule';
 
 const auth = new Auth();
 
@@ -57,6 +58,13 @@ export const makeMainRoutes = () => {
                     handleAuthentication(props);
                     return <Callback {...props} />;
                 }} />
+                <Route path="/schedule" render={(props) => (
+                    !auth.isAuthenticated() ? (
+                        <Redirect to="/home" />
+                    ) : (
+                            <Schedule auth={auth} {...props} />
+                        )
+                )} />
             </div>
         </Router>
     );

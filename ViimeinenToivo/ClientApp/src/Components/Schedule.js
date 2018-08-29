@@ -1,24 +1,41 @@
 ﻿import React, { Component } from "react";
 import $ from "jquery";
-import ActivityForm from './ActivityForm';
-import ActivitiesList from "./ActivitiesList";
+import ScheduleForm from './ScheduleForm';
+import ScheduleList from "./ScheduleList";
+import './Workout.css';
+import Modifyactivity from "./Modifyactivity";
+import ActivityFormTesti from './ActivityFormTesti';
+import Listatesti from "./Listatesti";
+import Sivutus from './Sivutus';
+import Exportti from './Exportti';
+import WorkoutForm from "./WorkoutForm";
+import WorkoutsList from "./WorkoutsList";
+import NmWorkoutActivity from "./NmWorkoutActivity";
+
 
 const apiurl = "api/Schedules";
 
 class Schedule extends Component {
+
+
     constructor() {
         super();
         this.state = {
-            userdata: []
+            userdata: [],
+            WorkoutId: null
+
         };
     }
 
     componentWillMount() {
         this.getUserData();
+        this.getUserSearchData();
+
     }
 
     componentDidMount() {
         this.getUserData();
+        this.getUserSearchData();
     }
 
     getUserData() {
@@ -28,6 +45,20 @@ class Schedule extends Component {
             cache: false,
             success: function (data) {
                 this.setState({ userdata: data }, function () {
+                });
+            }.bind(this),
+            error: function (xhr, status, err) {
+            }
+        });
+    }
+
+    getUserSearchData() {
+        $.ajax({
+            url: "api/Workouts",
+            dataType: "json",
+            cache: false,
+            success: function (data) {
+                this.setState({ searchdata: data }, function () {
                 });
             }.bind(this),
             error: function (xhr, status, err) {
@@ -45,12 +76,6 @@ class Schedule extends Component {
         });
     }
 
-    deleteSchedule(scheduleId) {
-        return fetch("api/Schedules/" + scheduleId, {
-            method: "DELETE"
-        });
-    }
-
     newSchedule = newschedule => {
         this.createSchedule(
             newschedule,
@@ -60,24 +85,37 @@ class Schedule extends Component {
         );
     };
 
-    deleteScheduleDel = removableId => {
-        this.deleteSchedule(removableId).then(
-            function (response) {
-                this.getUserData();
-            }.bind(this)
-        );
-    };
+    //updateComponent = (e) => {
+    //    this.setState({ workoutId: e.target.value });
+    //    console.log(e.target.value);
+    //    this.forceUpdate();
+    //}
+
+    movetoSchedule = (workoutId) => {
+        this.setState({ workoutId: workoutId });
+        console.log(workoutId);
+    }
 
     render() {
-        return (
-            <div className="Schedule">
-                <ActivitiesList
-                    userdata={this.state.userdata}
-                    remove={this.deleteActivity}
-                />
-                <ActivityForm saveActivity={this.newActivity} />
-            </div>
-        );
+        {
+
+            return (
+                <div>
+                    <div className="Schedule">
+                        <ScheduleForm saveSchedule={this.newSchedule} workoutId={this.state.workoutId} />
+                        <WorkoutsList
+                            userdata={this.state.searchdata}
+                            moveto={this.movetoSchedule}
+                            //onClick={(value) => { this.updateComponent(value); }}
+                        />
+                        <ScheduleList
+                            userdata={this.state.userdata}
+                            moveto={this.movetoWorkout}
+                        />
+                    </div>
+                </div>
+            );
+        }
     }
 }
 

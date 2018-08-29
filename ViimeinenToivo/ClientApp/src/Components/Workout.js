@@ -74,6 +74,7 @@ class Workout extends Component {
     movetoWorkout = (workoutId) => {
         this.setState({ clicked: true });
         this.setState({ workoutid: workoutId });
+        console.log("workout");
     }
 
     modifyActivity(activity, id) {

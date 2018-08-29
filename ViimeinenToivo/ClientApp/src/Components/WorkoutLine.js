@@ -5,6 +5,7 @@ class WorkoutLine extends Component {
         this.props.remove(this.props.userdata.workoutId);
     };
     moveto = () => {
+        console.log("Workoutline: moveto functio");
         this.props.moveto(this.props.userdata.workoutId);
     };
 
