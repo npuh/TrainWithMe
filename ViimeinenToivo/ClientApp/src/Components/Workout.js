@@ -3,10 +3,12 @@ import $ from "jquery";
 import ActivityForm from './ActivityForm';
 import ActivitiesList from "./ActivitiesList";
 import './Workout.css';
+import Modifyactivity from "./Modifyactivity";
 import ActivityFormTesti from './ActivityFormTesti';
 import Listatesti from "./Listatesti";
 import Sivutus from './Sivutus';
 import Exportti from './Exportti';
+
 
 const apiurl = "api/Workouts";
 
@@ -71,26 +73,43 @@ class Workout extends Component {
         this.setState({ workoutid : workoutId });
     }
 
+    modifyActivity(activity, id) {
+        console.log(activity);
+        console.dir(activity.Activityname);
+        return fetch("api/Activities/" + id, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(activity)
+        }).then(function (response) {
+            console.log(response.status);
+            //callback(response.status);
+        });
+    }
+
+    updateEntry = (updatentry, id) => {
+        console.dir(updatentry);
+        console.log("moro");
+        this.modifyActivity(updatentry, id);
+        console.log("moikka");
+    };
+
     render() {
         return (
-            <div>
-                <Exportti />
-                
-            <div class="container">
-                <div class="row align-items-start">
-                    <div class="col">
+               <div>
+                <Exportti />                              
+            <div className="container">
+                <div className="row align-items-start">
+                    <div className="col">
                         <ActivitiesList className="activitiesList"
                             userdata={this.state.userdata}
                             remove={this.deleteActivity}
-                        />  
-                    </div>                
-                    <div class="col">                    
-                        <ActivityFormTesti saveActivity={this.newActivity} />
+                            editactivity={this.updateEntry}
+
+                    />
                     </div>
-                    <div>
-             
-                    </div>
-                    
+                    <div class="col">
+                        <ActivityForm saveActivity={this.newActivity} />          
+                    </div>                   
                 </div>
                 </div>
             </div>
