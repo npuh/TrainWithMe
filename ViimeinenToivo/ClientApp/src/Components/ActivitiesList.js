@@ -38,8 +38,7 @@ class ActivitiesList extends Component {
 
 
                     </div>
-
-                        </div>               
+              
 
                 );
             });
