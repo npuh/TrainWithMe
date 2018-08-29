@@ -110,21 +110,26 @@ class NmWorkoutActivity extends Component {
 
     render() {
         return (
-            <div align="center">
-                <h1>{this.props.workoutid}</h1>
-                <ActivitiesList
-                    userdata={this.state.searchdata}
-                    remove={this.deleteActivity}
-                    add={this.newActivity}
-                />
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col">
+                        <h1>{this.props.workoutid}</h1>
+                        <ActivitiesList
+                            userdata={this.state.searchdata}
+                            remove={this.deleteActivity}
+                            add={this.newActivity}
+                        />
 
-                <ActivitiesList
-                    userdata={this.state.userdata}
-                    remove={this.deleteActivity}
-                    add={this.newActivity}
-                />
-                <ActivityForm saveActivity={this.newActivity} />
+                        <ActivitiesList
+                            userdata={this.state.userdata}
+                            remove={this.deleteActivity}
+                            add={this.newActivity}
+                        />
+                        <ActivityForm saveActivity={this.newActivity} />
+                    </div>
+                </div>
             </div>
+
         );
     }
 }

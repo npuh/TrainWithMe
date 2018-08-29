@@ -7,6 +7,9 @@ import ActivityFormTesti from './ActivityFormTesti';
 import Listatesti from "./Listatesti";
 import Sivutus from './Sivutus';
 import Exportti from './Exportti';
+import WorkoutForm from "./WorkoutForm";
+import WorkoutsList from "./WorkoutsList";
+import NmWorkoutActivity from "./NmWorkoutActivity";
 
 const apiurl = "api/Workouts";
 
@@ -18,14 +21,14 @@ class Workout extends Component {
         this.state = {
             userdata: [],
             clicked: false,
-            workoutid : null
+            workoutid: null
 
         };
     }
 
     componentWillMount() {
         this.getUserData();
-        
+
     }
 
     componentDidMount() {
@@ -67,35 +70,30 @@ class Workout extends Component {
     };
 
     movetoWorkout = (workoutId) => {
-        this.setState({ clicked : true });
-        this.setState({ workoutid : workoutId });
+        this.setState({ clicked: true });
+        this.setState({ workoutid: workoutId });
     }
 
     render() {
-        return (
-            <div>
-                <Exportti />
-                
-            <div class="container">
-                <div class="row align-items-start">
-                    <div class="col">
-                        <ActivitiesList className="activitiesList"
-                            userdata={this.state.userdata}
-                            remove={this.deleteActivity}
-                        />  
-                    </div>                
-                    <div class="col">                    
-                        <ActivityFormTesti saveActivity={this.newActivity} />
-                    </div>
+        {
+            if (this.state.clicked) {
+                return <NmWorkoutActivity workoutid={this.state.workoutid} />;
+            }
+            else {
+                return (
                     <div>
-             
+                        <Exportti />
+                        <div className="Workout">
+                            <WorkoutForm saveWorkout={this.newWorkout} />
+                            <WorkoutsList
+                                userdata={this.state.userdata}
+                                moveto={this.movetoWorkout}
+                            />
+                        </div>
                     </div>
-                    
-                </div>
-                </div>
-            </div>
-        );
+                );
+            }
+        }
     }
 }
-
 export default Workout;
