@@ -1,4 +1,6 @@
 ﻿import React, { Component } from "react";
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class WorkoutLine extends Component {
     remove = () => {
@@ -11,16 +13,9 @@ class WorkoutLine extends Component {
     render() {
                 return (
                     <div>
-                        <tr className="WorkoutLine">
-              
-                            <td>&nbsp;</td>
-                            <button type="button" onClick={this.remove}>Poista</button>
-                            <td>&nbsp;</td>
-                            <button type="button" onClick={this.moveto}>Siirry workoutiin</button>
-                            <td>&nbsp;</td>
-                            <td>{this.props.userdata.workoutname}</td>
-                            
-                        </tr>
+                        <ListGroup>
+                            <ListGroupItem className="listaitemi"><button type="button" className="nappi" size="lg" onClick={this.moveto}>Siirry treeniin</button><b className="nimi">{this.props.userdata.workoutname}</b></ListGroupItem>                     
+                        </ListGroup>               
                     </div>
                 );
 
