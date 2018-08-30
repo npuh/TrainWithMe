@@ -111,9 +111,10 @@
     padding: 10px, 0px;
     color: #0ca5b3;
 }
-.nimi{
+
+.nimi {
     font-size: 1.5em;
-    text-align: center; 
+    text-align: center;
     float: right;
     padding-top: 10px;
 }
