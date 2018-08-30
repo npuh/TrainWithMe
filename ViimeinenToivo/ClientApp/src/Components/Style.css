@@ -36,14 +36,20 @@
     /*display: inline-block;*/
     padding: 0px 0px;
 }
+.kello {
+    height: 50px;
+    width: 55px;
+    /*display: inline-block;*/
+    padding: 0px;
+}
 
 .h1 {
-    color: #ff5e00;
+    color: #fd6e1f;
     text-align: center;
 }
 
 .plussa {
-    height: 45px;
+    height: 48px;
     width: 55px;
     /*display: inline-block;*/
     padding: 3px 3px;
