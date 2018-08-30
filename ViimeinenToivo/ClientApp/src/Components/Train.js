@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import Stopwatch from './Stopwatch';
-import Workout from './Workout';
+import WorkoutsList from './WorkoutsList';
 import './Train.css';
 
 class Train extends Component {
@@ -10,7 +10,7 @@ class Train extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm">
-                            Tähän treenin tiedot.
+
                          </div>
                     </div>
                 </div>

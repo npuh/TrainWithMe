@@ -48,8 +48,6 @@ class App extends React.Component {
                                         onClick={this.goTo.bind(this, 'profiili')}
                                     />
                                 </a>
-
-
                                 <a href="/train">
                                     <input
                                         type="image"
@@ -58,14 +56,7 @@ class App extends React.Component {
                                         onClick={this.goTo.bind(this, 'train')}
                                     />
                                 </a>
-                                <a href="/calendar">
-                                    <input
-                                        type="image"
-                                        className="kalenteri"
-                                        src={kalenteri}
-                                        onClick={this.goTo.bind(this, 'calendar')}
-                                    />
-                                </a>
+                               
                                 <a href="/workout">
                                     <input
                                         type="image"
@@ -78,9 +69,9 @@ class App extends React.Component {
                             <a href="/schedule">
                                 <input
                                     type="image"
-                                    className="plussa"
-                                    src={plus}
-                                    onClick={this.goTo.bind(this, 'workout')}
+                                    className="kalenteri"
+                                    src={kalenteri}
+                                    onClick={this.goTo.bind(this, 'schedule')}
                                 />
                             </a>
 

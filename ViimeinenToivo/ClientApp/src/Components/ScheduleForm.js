@@ -41,25 +41,22 @@ class ScheduleForm extends Component {
         return (
             <div align="center">
                 <form onSubmit={this.laheta}>
-                    <h1>Add new Schedule</h1>
+                    <h1 className="h1">Lisää uusi aikataulu</h1>
                     <table>
                         <tbody>
                             <tr>
-                                <td>UserId</td>
                                 <td>
-                                    <input className="form-control" value={this.state.UserId} onChange={this.UserIdSave} placeholder="UserId" />
+                                    <input className="form-control" value={this.state.UserId} onChange={this.UserIdSave} placeholder="Käyttäjätunnus" />
                                 </td>
                             </tr>
                             <tr>
-                                <td>Date</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Date} onChange={this.DateSave} placeholder="Date" />
+                                    <input className="form-control" value={this.state.Date} onChange={this.DateSave} placeholder="Päivämäärä ja aika" />
                                 </td>
                             </tr>
                             <tr>
-                                <td>WorkoutId</td>
                                 <td>
-                                    <input className="form-control" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="WorkoutId" />
+                                    <input className="form-control" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="Treenin id" />
                                 </td>
                             </tr>
                             <tr>

@@ -40,13 +40,7 @@ export const makeMainRoutes = () => {
                             <Workout auth={auth} {...props} />
                         )
                 )} />
-                <Route path="/calendar" render={(props) => (
-                    !auth.isAuthenticated() ? (
-                        <Redirect to="/home" />
-                    ) : (
-                            <Calendar auth={auth} {...props} />
-                        )
-                )} />
+                
                 <Route path="/train" render={(props) => (
                     !auth.isAuthenticated() ? (
                         <Redirect to="/home" />
