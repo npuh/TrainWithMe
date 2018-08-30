@@ -9,6 +9,7 @@ import logout from './Components/logout.png';
 import barbel from './Components/barbel.png';
 import twmlogo from './Components/twmlogo.png';
 import naama from './Components/naama.png';
+import timer from './Components/timer.png';
 
 
 
@@ -48,11 +49,11 @@ class App extends React.Component {
                                         onClick={this.goTo.bind(this, 'profile')}
                                     />
                                 </a>
-                                <a href="/train">
+                                <a href="/timer">
                                     <input
                                         type="image"
-                                        className="puntti"
-                                        src={barbel}
+                                        className="kello"
+                                        src={timer}
                                         onClick={this.goTo.bind(this, 'train')}
                                     />
                                 </a>
