@@ -19,7 +19,7 @@ class App extends React.Component {
         return 'React.Component';
     }
     goTo(route) {
-        this.props.history.replace(`/${route}`);
+        this.props.history.push(`/${route}`);
     }
 
     login() {
@@ -45,7 +45,7 @@ class App extends React.Component {
                                         type="image"
                                         className="naama"
                                         src={naama}
-                                        onClick={this.goTo.bind(this, 'profiili')}
+                                        onClick={this.goTo.bind(this, 'profile')}
                                     />
                                 </a>
                                 <a href="/train">

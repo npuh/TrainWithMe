@@ -17,7 +17,7 @@ class ScheduleLine extends Component {
 
     modifyYearString = (value) => {
         return JSON.stringify(value).slice(1, 5);
-       
+
     }
 
     modifyMonthString = (value) => {
@@ -42,23 +42,21 @@ class ScheduleLine extends Component {
         this.props.moveto(this.props.userdata.workoutId);
     };
 
-    
+
 
     render() {
         return (
-            <div>
-                <tr className="WorkoutLine">
-
-                    <td>{this.state.day}.{this.state.month}.{this.state.year}</td>
-                    <td>&nbsp;</td>
-                    <td>{this.state.time}</td>
-                    <td>&nbsp;</td>
-                    <button type="button" onClick={this.moveto}>Siirry workoutiin</button>
-                </tr>
-            </div>
-        );
-
-    }
-}
-
-export default ScheduleLine;
+                <div className="WorkoutLine">
+                    <ListGroup>
+                        <ListGroupItem className="listaitemi2">
+                            <button type="button" onClick={this.moveto}>Siirry</button>
+                            {this.state.day}.{this.state.month}.{this.state.year} {this.state.time}
+                        </ListGroupItem>
+                    </ListGroup>
+                </div>
+                );
+        
+            }
+        }
+        
+        export default ScheduleLine;

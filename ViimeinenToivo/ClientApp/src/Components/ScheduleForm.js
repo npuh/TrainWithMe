@@ -50,7 +50,7 @@ class ScheduleForm extends Component {
                                     <input className="formiformi" type= "datetime-local" value={this.state.Date} onChange={this.DateSave} placeholder="Päivämäärä ja aika" />
                         </FormGroup>
                     <FormGroup>
-                                    input className="formiformi" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="Ei valittu" disabled />
+                                    <input className="formiformi" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="Ei valittu" disabled />
                         </FormGroup>
                                     <input className="Checkbox" type="image" src={checkbox} alt="Lisää" />
  
