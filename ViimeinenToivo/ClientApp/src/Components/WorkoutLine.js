@@ -1,5 +1,4 @@
 ﻿import React, { Component } from "react";
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class WorkoutLine extends Component {
@@ -15,7 +14,7 @@ class WorkoutLine extends Component {
                 return (
                     <div>
                         <ListGroup>
-                            <ListGroupItem className="listaitemi"><button type="button" className="jaa" size="lg" onClick={this.moveto}>Siirry</button><p className="nimi">{this.props.userdata.workoutname}</p></ListGroupItem>                                        
+                            <ListGroupItem className="listaitemi"><button type="button" size="lg" onClick={this.moveto}>Siirry</button><p className="nimi">{this.props.userdata.workoutname}</p></ListGroupItem>                                        
                         </ListGroup>
                     </div>
                 );

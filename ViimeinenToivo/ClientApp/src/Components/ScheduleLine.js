@@ -13,8 +13,7 @@ class ScheduleLine extends Component {
 
     render() {
         return (
-            <div className="WorkoutLine">
-              
+            <div className="WorkoutLine">             
                 <ListGroup>
                     <ListGroupItem className="listaitemi2">  <button type="button" onClick={this.remove}>Poista</button><button type="button" onClick={this.moveto}>Siirry</button><p className="nimi">{this.props.userdata.date}</p></ListGroupItem>
                     </ListGroup>                
