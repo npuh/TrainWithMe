@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Panel, ControlLabel, Glyphicon } from 'react-bootstrap';
 import $ from "jquery";
+import './Style.css';
 
 class Profile extends Component {
 
@@ -42,14 +43,22 @@ class Profile extends Component {
         return (
             <div className="container">
                 <div className="profile-area">
-                    <h1 className="h1">Omat tiedot: {this.state.metadata} {profile.name}</h1>
-                    <Panel header="Profile">
-                        <img src={profile.picture} alt="profile" />
+                    <h1 className="h1">Omat tiedot</h1>
+                    <Panel className="profiilipaneeli" >
                         <div>
-                            <ControlLabel><Glyphicon glyph="user" /> Nickname</ControlLabel>
-                            <h3>{profile.nickname}</h3>
+                    <img className="profiilikuva" src={profile.picture} alt="profile" />
+                            <table className= "profiilitaulukko">
+                                <tr>
+                                    <td>Id-numero:</td><td>&nbsp;</td><td>{this.state.metadata}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nimi:</td><td>&nbsp;</td><td>{profile.name}</td>
+                                </tr>
+                                <tr>
+                                    <td>Käyttäjätunnus:</td><td>&nbsp;</td><td>{profile.nickname}</td>
+                                </tr>
+                            </table>
                         </div>
-                        <pre>{JSON.stringify(profile, null, 2)}</pre>
                     </Panel>
                 </div>
             </div>

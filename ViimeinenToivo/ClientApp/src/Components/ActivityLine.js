@@ -36,6 +36,11 @@ class ActivityLine extends Component {
                     <Form className="ActivityLine">
                         <FormGroup>
                             <input type="text" className="activitylineformi" value={this.props.userdata.activityname} />
+                            <p>Paino: {this.props.userdata.weigth}</p>
+                            <p>Toistot: {this.props.userdata.reps}</p>
+                            <p>Kierrokset: {this.props.userdata.rounds}</p>
+                            <p>Lepo: {this.props.userdata.rest}</p>
+                            <p>Kesto: {this.props.userdata.duration}</p>
                             <button type="button" className="activitynappula"  onClick={this.add}>Lisää treeniin</button>
                             <button type="button" className="activitynappula" onClick={this.remove}>Poista</button>
                             <button type="button" className="activitynappula" onClick={this.handlePageChange}>Päivitä</button>

@@ -53,13 +53,13 @@ class ScheduleForm extends Component {
                             <tr>
                                 <td>Date</td>
                                 <td>
-                                    <input className="form-control" value={this.state.Date} onChange={this.DateSave} placeholder="Date" />
+                                    <input className="form-control" type= "datetime-local" value={this.state.Date} onChange={this.DateSave} placeholder="Date" />
                                 </td>
                             </tr>
                             <tr>
-                                <td>WorkoutId</td>
+                                <td>Valitse harjoitus</td>
                                 <td>
-                                    <input className="form-control" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="WorkoutId" />
+                                    <input className="form-control" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="Ei valittu" disabled />
                                 </td>
                             </tr>
                             <tr>

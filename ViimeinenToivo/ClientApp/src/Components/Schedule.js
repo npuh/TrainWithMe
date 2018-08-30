@@ -96,25 +96,35 @@ class Schedule extends Component {
         console.log(workoutId);
     }
 
+    movetoWorkout = (workoutId) => {
+        this.setState({ clicked: true });
+        this.setState({ workoutid: workoutId });
+        console.log("workout");
+    }
+
     render() {
         {
-
-            return (
-                <div>
-                    <div className="Schedule">
-                        <ScheduleForm saveSchedule={this.newSchedule} workoutId={this.state.workoutId} />
-                        <WorkoutsList
-                            userdata={this.state.searchdata}
-                            moveto={this.movetoSchedule}
+            if (this.state.clicked) {
+                return <NmWorkoutActivity workoutid={this.state.workoutid} />;
+            }
+            else {
+                return (
+                    <div>
+                        <div className="Schedule">
+                            <ScheduleForm saveSchedule={this.newSchedule} workoutId={this.state.workoutId} />
+                            <WorkoutsList
+                                userdata={this.state.searchdata}
+                                moveto={this.movetoSchedule}
                             //onClick={(value) => { this.updateComponent(value); }}
-                        />
-                        <ScheduleList
-                            userdata={this.state.userdata}
-                            moveto={this.movetoWorkout}
-                        />
+                            />
+                            <ScheduleList
+                                userdata={this.state.userdata}
+                                moveto={this.movetoWorkout}
+                            />
+                        </div>
                     </div>
-                </div>
-            );
+                );
+            }
         }
     }
 }

@@ -3,10 +3,10 @@ import ScheduleLine from "./ScheduleLine";
 
 class ScheduleList extends Component {
     remove = () => {
-        this.props.remove(this.props.userdata.WorkoutId);
+        this.props.remove(this.props.userdata.workoutId);
     };
     moveto = () => {
-        this.props.moveto(this.props.userdata.WorkoutId);
+        this.props.moveto(this.props.userdata.workoutId);
     };
     render() {
         let userdataItems;
