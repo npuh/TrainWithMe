@@ -141,13 +141,14 @@ class NmWorkoutActivity extends Component {
                             add={this.newActivity}
                             editactivity={this.updateEntry}
                         />
+                      
                         <h1 className="h1">Liikepankki</h1>
                         <ActivitiesList
                             userdata={this.state.userdata}
                             remove={this.deleteActivity}
                             add={this.newActivity}
                             editactivity={this.updateEntry}
-                        />                     
+                            />
                         <ActivityFormTesti saveActivity={this.luoActivity} />
                     </div>
                 </div>
