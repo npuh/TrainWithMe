@@ -35,11 +35,11 @@ class ActivityLine extends Component {
                     <Form className="ActivityLine">
                         <FormGroup>
                             <input type="Liikkeen nimi" id="fak" className="activitylineformi[]" value={this.props.userdata.activityname} />
-                            <input type="Painot/kg"  id="fak" className="activitylineformi[]" value={this.props.userdata.weight} />
-                            <input type="Toistot" id="fak" className="activitylineformi[]" value={this.props.userdata.reps} />
-                            <input type="Sarjat" id="fak" className="activitylineformi[]" value={this.props.userdata.rounds} />
-                            <input type="Lepo" id="fak" className="activitylineformi[]" value={this.props.userdata.rest} />
-                            <input type="Kesto" id="fak" className="activitylineformi[]" value={this.props.userdata.duration} />
+                            <label id="label">Painot/kg</label><input type="Painot/kg" label="Paino/kg" id="fak" className="activitylineformi[]" value={this.props.userdata.weight} />
+                            <label id="label">Toistot</label><input type="Toistot" id="fak" className="activitylineformi[]" value={this.props.userdata.reps} />                       
+                            <label id="label">Sarjat</label><input type="Sarjat" id="fak" className="activitylineformi[]" value={this.props.userdata.rounds} />
+                            <label id="label">Lepo</label><input type="Lepo" id="fak" className="activitylineformi[]" value={this.props.userdata.rest} />
+                            <label id="label">Kesto</label><input type="Kesto" id="fak" className="activitylineformi[]" value={this.props.userdata.duration} />
                             <button type="button" id="faknap" className="activitynappula[]"  onClick={this.add}>Lisää treeniin</button>
                             <button type="button" id="faknap" className="activitynappula[]" onClick={this.handlePageChange}>Päivitä</button>
                         </FormGroup>
