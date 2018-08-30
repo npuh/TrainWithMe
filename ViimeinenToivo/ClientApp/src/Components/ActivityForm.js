@@ -79,7 +79,6 @@ class ActivityForm extends Component {
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-
                                 <td >
                                     <input className="Checkbox" type="image" src={checkbox} alt="Lisää" />
                                 </td>
