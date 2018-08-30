@@ -2,6 +2,7 @@
 import checkbox from './checkbox.png';
 import "./Style.css";
 import './ActivityForm.css';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 class ScheduleForm extends Component {
@@ -40,37 +41,20 @@ class ScheduleForm extends Component {
     render() {
         return (
             <div align="center">
-                <form onSubmit={this.laheta}>
-                    <h1>Add new Schedule</h1>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>UserId</td>
-                                <td>
-                                    <input className="form-control" value={this.state.UserId} onChange={this.UserIdSave} placeholder="UserId" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Date</td>
-                                <td>
-                                    <input className="form-control" type= "datetime-local" value={this.state.Date} onChange={this.DateSave} placeholder="Date" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Valitse harjoitus</td>
-                                <td>
-                                    <input className="form-control" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="Ei valittu" disabled />
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td >
+                <Form onSubmit={this.laheta}>
+                    <h1 className="h1">Lisää uusi aikataulu</h1>
+                    <FormGroup>
+                                    <input className="formiformi" value={this.state.UserId} onChange={this.UserIdSave} placeholder="Käyttäjätunnus" />
+                        </FormGroup>
+                    <FormGroup>
+                                    <input className="formiformi" type= "datetime-local" value={this.state.Date} onChange={this.DateSave} placeholder="Päivämäärä ja aika" />
+                        </FormGroup>
+                    <FormGroup>
+                                    input className="formiformi" value={this.state.workoutId} onChange={this.WorkoutIdSave} placeholder="Ei valittu" disabled />
+                        </FormGroup>
                                     <input className="Checkbox" type="image" src={checkbox} alt="Lisää" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
+ 
+                </Form>
             </div>
         );
     }

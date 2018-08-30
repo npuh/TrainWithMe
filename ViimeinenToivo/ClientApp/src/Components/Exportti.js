@@ -38,6 +38,7 @@ class Exportti extends Component {
             error: function (xhr, status, err) {
             }
         });
+        this.getUserData = this.getUserData.bind(this);
     }
     render() {
         const userdata = this.state.userdata; 

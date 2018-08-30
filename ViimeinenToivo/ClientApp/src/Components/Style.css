@@ -103,12 +103,19 @@
     height: 70px;
     width: 200px;
     padding: 10px, 0px;
+    color: #0ca5b3;
 }
-
-.nimi {
+.listaitemi2 {
+    height: 70px;
+    width: 200px;
+    padding: 10px, 0px;
+    color: #0ca5b3;
+}
+.nimi{
     font-size: 1.5em;
-    text-align: right;
-    padding-top: 0px;
+    text-align: center; 
+    float: right;
+    padding-top: 10px;
 }
 
 .alasvetovalikko {
@@ -126,4 +133,13 @@
     text-align: justify;
     color: #0ca5b3;
     float: left;
+}
+.formiformi {
+    width: 20%;
+    padding: 15px 10px;
+    margin: 0px;
+    display: inline-block;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
