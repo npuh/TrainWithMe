@@ -35,15 +35,14 @@ class ActivityLine extends Component {
                 <div>
                     <Form className="ActivityLine">
                         <FormGroup>
-                            <input type="text" className="activitylineformi" value={this.props.userdata.activityname} />
-                            <p>Paino: {this.props.userdata.weigth}</p>
-                            <p>Toistot: {this.props.userdata.reps}</p>
-                            <p>Kierrokset: {this.props.userdata.rounds}</p>
-                            <p>Lepo: {this.props.userdata.rest}</p>
-                            <p>Kesto: {this.props.userdata.duration}</p>
-                            <button type="button" className="activitynappula"  onClick={this.add}>Lisää treeniin</button>
-                            <button type="button" className="activitynappula" onClick={this.remove}>Poista</button>
-                            <button type="button" className="activitynappula" onClick={this.handlePageChange}>Päivitä</button>
+                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.activityname} />
+                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.weight} />
+                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.reps} />
+                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.rounds} />
+                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.rest} />
+                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.duration} />
+                            <button type="button" id="faknap" className="activitynappula[]"  onClick={this.add}>Lisää treeniin</button>
+                            <button type="button" id="faknap" className="activitynappula[]" onClick={this.handlePageChange}>Päivitä</button>
                         </FormGroup>
                     </Form>                
                   </div>
