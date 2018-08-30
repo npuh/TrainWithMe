@@ -1,7 +1,22 @@
 ﻿import React, { Component } from "react";
 import ScheduleLine from "./ScheduleLine";
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 class ScheduleList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            dropdownOpen: false
+        };
+    }
+
+    toggle() {
+        this.setState(prevState => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    };
     remove = () => {
         this.props.remove(this.props.userdata.WorkoutId);
     };
@@ -14,10 +29,8 @@ class ScheduleList extends Component {
             userdataItems = this.props.userdata.map(userdata => {
                 return (
                     <div className="Schedules">
-                        <div className="lines"></div>
                         <table align="center">
                             {userdataItems}</table>
-
                         <ScheduleLine
                             userdata={userdata}
                             remove={this.props.remove}
@@ -29,15 +42,14 @@ class ScheduleList extends Component {
             });
         }
         return (
-            <div className="TuoteYksikko">
-                <h1 className="harjoitusotsikko">SchedulesList</h1>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <div className="lines" />
-                <table align="center">
-                    {userdataItems}</table>
-            </div>
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret className="alasvetovalikko">
+                    <h1 className="h1">Treeniajat</h1>
+                </DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem header>{userdataItems}</DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
         );
     }
 }

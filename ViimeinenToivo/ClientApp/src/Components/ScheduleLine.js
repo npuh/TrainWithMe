@@ -1,4 +1,7 @@
 ﻿import React, { Component } from "react";
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { ListGroup, ListGroupItem } from 'reactstrap';
+
 
 class ScheduleLine extends Component {
     remove = () => {
@@ -10,17 +13,11 @@ class ScheduleLine extends Component {
 
     render() {
         return (
-            <div>
-                <tr className="WorkoutLine">
-
-                    <td>&nbsp;</td>
-                    <button type="button" onClick={this.remove}>Poista</button>
-                    <td>&nbsp;</td>
-                    <button type="button" onClick={this.moveto}>Siirry workoutiin</button>
-                    <td>&nbsp;</td>
-                    <td>{this.props.userdata.date}</td>
-
-                </tr>
+            <div className="WorkoutLine">
+              
+                <ListGroup>
+                    <ListGroupItem className="listaitemi2">  <button type="button" onClick={this.remove}>Poista</button><button type="button" onClick={this.moveto}>Siirry</button><p className="nimi">{this.props.userdata.date}</p></ListGroupItem>
+                    </ListGroup>                
             </div>
         );
 
