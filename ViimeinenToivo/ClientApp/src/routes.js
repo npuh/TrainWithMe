@@ -41,7 +41,7 @@ export const makeMainRoutes = () => {
                         )
                 )} />
                 
-                <Route path="/train" render={(props) => (
+                <Route path="/timer" render={(props) => (
                     !auth.isAuthenticated() ? (
                         <Redirect to="/home" />
                     ) : (

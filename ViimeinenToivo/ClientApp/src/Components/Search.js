@@ -14,13 +14,13 @@
   
 //};
 
-////componentWillMount() {
-////    this.getUserData();
-////}
+//componentWillMount() {
+//    this.getUserData();
+//}
 
-////componentDidMount() {
-////    this.getUserData();
-////}
+//componentDidMount() {
+//    this.getUserData();
+//}
 
 //getUserData() {
 //    $.ajax({
@@ -45,7 +45,7 @@
 //            body: JSON.stringify(activity)
 //        }).then(function (response) {
 //            console.log(response.status);
-//            //callback(response.status);
+//            callback(response.status);
 //        });
 //    }
 //    render() {

@@ -10,7 +10,6 @@ class ActivityLine extends Component {
         super();
         this.state = { trigger: false };
         this.handlePageChange = this.handlePageChange.bind(this);
-
     }
     remove = () => {
         this.props.remove(this.props.userdata.activityId);
@@ -35,12 +34,12 @@ class ActivityLine extends Component {
                 <div>
                     <Form className="ActivityLine">
                         <FormGroup>
-                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.activityname} />
-                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.weight} />
-                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.reps} />
-                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.rounds} />
-                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.rest} />
-                            <input type="text" id="fak" className="activitylineformi[]" value={this.props.userdata.duration} />
+                            <input type="Liikkeen nimi" id="fak" className="activitylineformi[]" value={this.props.userdata.activityname} />
+                            <label id="label">Painot/kg</label><input type="Painot/kg" label="Paino/kg" id="fak" className="activitylineformi[]" value={this.props.userdata.weight} />
+                            <label id="label">Toistot</label><input type="Toistot" id="fak" className="activitylineformi[]" value={this.props.userdata.reps} />                       
+                            <label id="label">Sarjat</label><input type="Sarjat" id="fak" className="activitylineformi[]" value={this.props.userdata.rounds} />
+                            <label id="label">Lepo</label><input type="Lepo" id="fak" className="activitylineformi[]" value={this.props.userdata.rest} />
+                            <label id="label">Kesto</label><input type="Kesto" id="fak" className="activitylineformi[]" value={this.props.userdata.duration} />
                             <button type="button" id="faknap" className="activitynappula[]"  onClick={this.add}>Lisää treeniin</button>
                             <button type="button" id="faknap" className="activitynappula[]" onClick={this.handlePageChange}>Päivitä</button>
                         </FormGroup>
