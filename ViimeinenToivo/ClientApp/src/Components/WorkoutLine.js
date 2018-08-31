@@ -7,7 +7,7 @@ class WorkoutLine extends Component {
     };
     moveto = () => {
         console.log("Workoutline: moveto functio");
-        this.props.moveto(this.props.userdata.workoutId);
+        this.props.moveto(this.props.userdata.workoutId, this.props.userdata.workoutname);
     };
 
     render() {

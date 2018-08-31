@@ -23,7 +23,8 @@ class Workout extends Component {
         this.state = {
             userdata: [],
             clicked: false,
-            workoutid: null
+            workoutid: null,
+            workoutname: ""
 
         };
     }
@@ -53,6 +54,7 @@ class Workout extends Component {
     }
 
     createActivity(activity, callback) {
+        console.log(activity+ "torstai");
         return fetch("api/Activities", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -90,9 +92,10 @@ class Workout extends Component {
         );
     };
 
-    movetoWorkout = (workoutId) => {
+    movetoWorkout = (workoutId, workoutName) => {
         this.setState({ clicked: true });
         this.setState({ workoutid: workoutId });
+        this.setState({ workoutname: workoutName });
         console.log("workout");
     }
 
@@ -119,7 +122,7 @@ class Workout extends Component {
     render() {
         {
             if (this.state.clicked) {
-                return <NmWorkoutActivity workoutid={this.state.workoutid} />;
+                return <NmWorkoutActivity workoutid={this.state.workoutid} workoutname={this.state.workoutname} />;
             }
             else {
                 return (

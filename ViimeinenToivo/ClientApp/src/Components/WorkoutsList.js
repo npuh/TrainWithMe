@@ -22,7 +22,7 @@ class WorkoutsList extends Component {
         this.props.remove(this.props.userdata.WorkoutId);
     };
     moveto = () => {
-        this.props.moveto(this.props.userdata.WorkoutId);
+        this.props.moveto(this.props.userdata.WorkoutId, this.props.userdata.workoutname);
     };
     render() {
         let userdataItems;
