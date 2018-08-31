@@ -17,8 +17,6 @@ class Modifyactivity extends Component {
             Duration: props.data.duration
         };
 
-        
-
     }
 
     activitynameChanged = (e) => { this.setState({ Activityname: e.target.value }); }
@@ -33,6 +31,7 @@ class Modifyactivity extends Component {
         console.log(this.state);
         console.log("ModifyActivity propsit", this.props);
         this.props.editactivity(this.state, this.props.id);
+        this.props.reportmodified(this.state.Activityname);
         this.setState({ Activityname:"", Weight: "", Reps: "", Rounds: "", Rest: "", Duration: "" });
     };
 
@@ -57,7 +56,7 @@ class Modifyactivity extends Component {
                     </td>
                 </tr>
                 <tr>
-                    <td>Kuorma</td>
+                    <td>Painot/kg</td>
                     <td>
                         <input className="form-control" defaultValue={this.props.data.weight} onChange={this.weightChanged} />
                     </td>
@@ -69,7 +68,7 @@ class Modifyactivity extends Component {
                     </td>
                 </tr>
                 <tr>
-                    <td>Kierrokset</td>
+                    <td>Sarjat</td>
                     <td>
                         <input className="form-control" defaultValue={this.props.data.rounds} onChange={this.roundsChanged} />
                     </td>
@@ -90,9 +89,8 @@ class Modifyactivity extends Component {
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-
-                                <td >
-                                    <input className="Checkbox" type="image" src={checkbox} alt="Lisää" />
+                     <td >
+                      <input className="Checkbox" type="image" src={checkbox} alt="Lisää" />
                     </td>
                 </tr>
             </tbody>
