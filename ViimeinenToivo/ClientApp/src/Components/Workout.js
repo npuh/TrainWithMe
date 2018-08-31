@@ -131,8 +131,9 @@ class Workout extends Component {
                         <div className="container">
                             <div className="row align-items-start">
                                 <div className="col">                     
-                            <WorkoutForm saveWorkout={this.newWorkout} />
-                            <WorkoutsList
+                                    <WorkoutForm saveWorkout={this.newWorkout} />
+                                    
+                            <WorkoutsList  
                                 userdata={this.state.userdata}
                                 moveto={this.movetoWorkout}
                             />

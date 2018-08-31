@@ -45,7 +45,7 @@ class WorkoutsList extends Component {
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret className="alasvetovalikko">
-                    <h1 className="h1">Treenilista</h1>
+                    <h2 className="h2">Treenilista</h2>
         </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem header>{userdataItems}</DropdownItem>          
