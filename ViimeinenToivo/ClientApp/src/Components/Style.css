@@ -128,10 +128,11 @@
 
 .alasvetovalikko {
     height: 85px;
-    width: 250px;
+    width: 170px;
     border: 1px solid #808080;
     background-color: #ffffff;
     padding-top: 0px;
+    
 }
 
 .activitynappula {
@@ -155,3 +156,8 @@
     font-size: 1.5em;
 
 }
+.h2 {
+    color: #fd6e1f
+
+}
+

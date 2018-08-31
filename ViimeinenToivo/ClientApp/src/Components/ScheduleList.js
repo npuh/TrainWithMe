@@ -44,7 +44,7 @@ class ScheduleList extends Component {
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret className="alasvetovalikko">
-                    <h1 className="h1">Treeniajat</h1>
+                    <h1 className="h2">Treeniajat</h1>
                 </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem header>{userdataItems}</DropdownItem>
