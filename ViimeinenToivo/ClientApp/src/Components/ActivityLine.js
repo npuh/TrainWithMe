@@ -6,9 +6,9 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 class ActivityLine extends Component {
-    constructor() {
-        super();
-        this.state = { trigger: false };
+    constructor(props) {
+        super(props);
+        this.state = { trigger: false, activityname: props.userdata.activityname};
         this.handlePageChange = this.handlePageChange.bind(this);
     }
     remove = () => {
@@ -21,20 +21,23 @@ class ActivityLine extends Component {
     handlePageChange= () => {
     this.setState({ trigger: true });
 
-}
+    }
+    activityModified = (activityname) => {
+        this.setState({ trigger: false, activityname: activityname });
+    }
 
     render() {
         console.dir(this.props);
         let view;
         if (this.state.trigger) {
-            view = <Modifyactivity data={this.props.userdata} id={this.props.id} editactivity={this.props.editactivity} />;
+            view = <Modifyactivity data={this.props.userdata} id={this.props.id} editactivity={this.props.editactivity} reportmodified={this.activityModified} />;
 
         } else {
             view = (
                 <div>
                     <Form className="ActivityLine">
                         <FormGroup>
-                            <input type="Liikkeen nimi" id="fak" className="activitylineformi[]" value={this.props.userdata.activityname} />
+                            <input type="Liikkeen nimi" id="fak" className="activitylineformi[]" value={this.state.activityname} />
                             <label id="label">Painot/kg</label><input type="Painot/kg" label="Paino/kg" id="fak" className="activitylineformi[]" value={this.props.userdata.weight} />
                             <label id="label">Toistot</label><input type="Toistot" id="fak" className="activitylineformi[]" value={this.props.userdata.reps} />                       
                             <label id="label">Sarjat</label><input type="Sarjat" id="fak" className="activitylineformi[]" value={this.props.userdata.rounds} />
